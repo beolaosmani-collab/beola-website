@@ -18,6 +18,10 @@ const CONFIG = {
   // The same number for the "click to call" link — digits only, keep the +:
   mainPhoneDial: "+355682073024",                // same number, no spaces
 
+  // Second phone number (shown in Contact + footer). Leave "" to hide it.
+  phone2Display: "+355 68 901 1606",             // second number (from the banner)
+  phone2Dial: "+355689011606",                   // second number, no spaces
+
   // WhatsApp number — international format, DIGITS ONLY (no +, no spaces):
   whatsappNumber: "355682073024",                // same number, digits only
 

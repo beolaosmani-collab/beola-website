@@ -34,11 +34,13 @@
   }
   var LINKS = {
     callHref: "tel:" + CONFIG.mainPhoneDial.replace(/\s+/g, ""),
+    call2Href: CONFIG.phone2Dial ? "tel:" + CONFIG.phone2Dial.replace(/\s+/g, "") : "",
     whatsappHref: "https://wa.me/" + CONFIG.whatsappNumber.replace(/\D/g, ""),
     emailHref: "mailto:" + CONFIG.email,
     instagramHref: CONFIG.instagram,
     instagramLabel: igLabel(CONFIG.instagram),
     phoneDisplay: CONFIG.mainPhoneDisplay,
+    phone2Display: CONFIG.phone2Display || "",
     email: CONFIG.email,
     mainAddress: CONFIG.businesses[0] ? CONFIG.businesses[0].address : ""
   };
@@ -49,6 +51,7 @@
       var key = el.getAttribute("data-config");
       var val = LINKS[key];
       if (val == null) return;
+      if (val === "") { el.style.display = "none"; return; } // optional value not set -> hide
       if (el.tagName === "A") {
         el.setAttribute("href", val);
       } else {
@@ -89,6 +92,11 @@
     $all("[data-i18n-aria]").forEach(function (el) {
       var val = dict[el.getAttribute("data-i18n-aria")];
       if (typeof val === "string") el.setAttribute("aria-label", val);
+    });
+    // Localized image alt text (SEO + accessibility)
+    $all("[data-i18n-alt]").forEach(function (el) {
+      var val = dict[el.getAttribute("data-i18n-alt")];
+      if (typeof val === "string") el.setAttribute("alt", val);
     });
 
     // Active button state

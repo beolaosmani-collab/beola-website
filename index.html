@@ -180,13 +180,18 @@
 
     <!-- ============================== ABOUT ============================= -->
     <section class="section" id="about">
-      <div class="container about-grid">
+      <div class="container">
+        <div class="about-grid">
         <div class="about-text">
           <span class="kicker" data-i18n="about_kicker">Rreth Nesh</span>
           <h2 data-i18n="about_title">Një biznes familjar që familjet shqiptare e besojnë</h2>
           <p data-i18n="about_p1"></p>
           <p data-i18n="about_p2"></p>
         </div>
+        <figure class="about-media">
+          <img src="images/about-workshop.jpg" data-i18n-alt="alt_workshop" alt="Servis i pajisjeve elektroshtëpiake gjermane" loading="lazy" width="1200" height="900" />
+        </figure>
+        </div><!-- /about-grid -->
         <ul class="feature-list">
           <li>
             <h3 data-i18n="feat_family_t">Biznes familjar</h3>
@@ -280,6 +285,16 @@
           </article>
         </div>
 
+        <div class="gallery-head">
+          <span class="kicker" data-i18n="gallery_kicker">Galeria</span>
+          <h3 data-i18n="gallery_title">Nga magazina jonë</h3>
+        </div>
+        <div class="product-gallery">
+          <figure><img src="images/gallery-washers.jpg" data-i18n-alt="alt_washers" alt="Lavatriçe gjermane në magazinën tonë" loading="lazy" width="1000" height="800" /></figure>
+          <figure><img src="images/gallery-ovens.jpg" data-i18n-alt="alt_ovens" alt="Furra dhe kuzhina gjermane" loading="lazy" width="1000" height="800" /></figure>
+          <figure><img src="images/gallery-warehouse.jpg" data-i18n-alt="alt_warehouse" alt="Magazina jonë me elektroshtëpiake gjermane" loading="lazy" width="1000" height="800" /></figure>
+        </div>
+
         <p class="product-note" data-i18n="prod_note"></p>
       </div>
     </section>
@@ -292,6 +307,9 @@
           <h2 data-i18n="loc_title">Vendndodhjet</h2>
           <p class="section-sub" data-i18n="loc_sub"></p>
         </div>
+        <figure class="location-hero">
+          <img src="images/storefront.jpg" data-i18n-alt="alt_storefront" alt="Hyrja e B.O. BEOLA në Tiranë" loading="lazy" width="1400" height="900" />
+        </figure>
         <!-- Location cards are generated from js/config.js + js/translations.js -->
         <div class="location-grid" id="location-grid"></div>
       </div>
@@ -309,6 +327,7 @@
             <li>
               <span class="contact-label" data-i18n="label_phone">Telefoni</span>
               <a href="#" data-config="callHref"><span data-config="phoneDisplay">+355 69 000 0000</span></a>
+              <a href="#" data-config="call2Href"><span data-config="phone2Display">+355 68 901 1606</span></a>
             </li>
             <li>
               <span class="contact-label" data-i18n="label_email">Email</span>
@@ -387,6 +406,7 @@
       <div class="footer-contact">
         <h4 data-i18n="footer_contact">Kontakt</h4>
         <a href="#" data-config="callHref"><span data-config="phoneDisplay">+355 69 000 0000</span></a>
+        <a href="#" data-config="call2Href"><span data-config="phone2Display">+355 68 901 1606</span></a>
         <a href="#" data-config="emailHref"><span data-config="email">info@beola.al</span></a>
         <a href="#" data-config="instagramHref" target="_blank" rel="noopener">Instagram</a>
         <p class="footer-address" data-config="mainAddress">Rruga Sabaudin Gabrani, përballë Spitalit Amerikan, Tiranë</p>

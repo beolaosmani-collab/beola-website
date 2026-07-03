@@ -62,24 +62,39 @@ Edit the `hours_line1` and `hours_line2` values in `js/translations.js`
 ## ✅ Your real details are already in the site
 
 - ✅ Phone / WhatsApp: **+355 68 207 3024**
+- ✅ Second phone: **+355 68 901 1606** (shown in Contact + footer; edit/remove in `config.js` → `phone2Display`/`phone2Dial`)
 - ✅ Email: **kontakt@beolashpk.com**
 - ✅ Instagram: **@elektroshtepiake_beola**
 - ✅ Branch 1 — Yzberisht: Rruga Sabaudin Gabrani, Yzberisht, përballë Spitalit Amerikan, Tiranë 1001
 - ✅ Branch 2 — Mëzez: Rruga Gani Toptani, Mëzez, pranë Burger Ija, Tiranë
 - ✅ Opening hours: Mon–Sat 09:00–17:00 · Sunday 09:00–12:30
+- ✅ **Real photos** added (hero, About workshop, product gallery, storefront) — see below
 
 > **Note on "branches":** all three are the same company, **B.O. BEOLA Sh.p.k.** —
 > just branches. They share the same phone, email and Instagram. The site now
 > calls this section **"Our Branches" (Degët Tona)**, not "three businesses".
 
-## 📌 Only 2 things left (add whenever you have them)
+## 📌 Only 1 thing left (add whenever you have it)
 
 - [ ] **Branch 3 address** → `js/config.js`, in the `biz3` block set `address: "..."`.
       Branch 3 stays **hidden** on the site until you add its address, so nothing
       ever looks broken or half-finished.
-- [ ] **Hero photo** → add a file named **`images/hero.jpg`** (your best clean
-      warehouse / washing-machine photo). Until then, a tidy dark background shows.
-      Tips (brightness, cropping, file size) are in `images/README.txt`.
+
+## 🖼️ The photos on the site
+
+Your real photos have been cropped straight, brightened, compressed for fast
+loading, and placed here (the car number plate on the storefront was blurred):
+
+| File in `images/` | Where it shows |
+|---|---|
+| `hero.jpg` | Big banner at the top (oven aisle) |
+| `about-workshop.jpg` | About section (your technician at work) |
+| `gallery-washers.jpg` · `gallery-ovens.jpg` · `gallery-warehouse.jpg` | "From our warehouse" gallery in Products |
+| `storefront.jpg` | Locations section (your entrance banner) |
+
+**To swap any photo later:** just replace the file in `images/` with a new one of
+the **same name** (ideally similar shape/landscape). Send me a new photo any time
+and I'll crop/brighten/place it for you.
 
 ---
 
