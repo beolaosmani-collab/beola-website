@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Editor / OS cruft
+Thumbs.db
+*.log
+
+# Dependencies (none needed for this static site, but just in case)
+node_modules/
+
+# Local preview / editor config (not part of the website)
+.claude/
