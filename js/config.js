@@ -59,8 +59,8 @@ const CONFIG = {
     },
     {
       id: "biz3",
-      name: "B.O. BEOLA Sh.p.k.",
-      address: "",                               // 👈 ADD Branch 3 address here to show it (leave "" to keep it hidden)
+      name: "B.O. BEOLA Sh.p.k. — Vaqarr",
+      address: "Rruga Demir Çela, Vaqarr, pranë Bar-Restorant Trëndelina, Tiranë",
       phoneDisplay: "+355 68 207 3024",
       phoneDial: "+355682073024",
       email: "kontakt@beolashpk.com",
@@ -81,6 +81,10 @@ const CONFIG = {
     {
       key: "loc2",
       address: "Rruga Gani Toptani, Mëzez, pranë Burger Ija, Tiranë"
+    },
+    {
+      key: "loc3",
+      address: "Rruga Demir Çela, Vaqarr, pranë Bar-Restorant Trëndelina, Tiranë"
     }
   ]
 

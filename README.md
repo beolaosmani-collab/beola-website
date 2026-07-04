@@ -67,6 +67,7 @@ Edit the `hours_line1` and `hours_line2` values in `js/translations.js`
 - ✅ Instagram: **@elektroshtepiake_beola**
 - ✅ Branch 1 — Yzberisht: Rruga Sabaudin Gabrani, Yzberisht, përballë Spitalit Amerikan, Tiranë 1001
 - ✅ Branch 2 — Mëzez: Rruga Gani Toptani, Mëzez, pranë Burger Ija, Tiranë
+- ✅ Branch 3 — Vaqarr: Rruga Demir Çela, Vaqarr, pranë Bar-Restorant Trëndelina, Tiranë
 - ✅ Opening hours: Mon–Sat 09:00–17:00 · Sunday 09:00–12:30
 - ✅ **Real photos** added (hero, About workshop, product gallery, storefront) — see below
 
@@ -74,11 +75,10 @@ Edit the `hours_line1` and `hours_line2` values in `js/translations.js`
 > just branches. They share the same phone, email and Instagram. The site now
 > calls this section **"Our Branches" (Degët Tona)**, not "three businesses".
 
-## 📌 Only 1 thing left (add whenever you have it)
+## ✅ All three branches are live
 
-- [ ] **Branch 3 address** → `js/config.js`, in the `biz3` block set `address: "..."`.
-      Branch 3 stays **hidden** on the site until you add its address, so nothing
-      ever looks broken or half-finished.
+Yzberisht, Mëzez and Vaqarr each appear on the site with their own Google Map.
+Everything you gave me is filled in — there are no remaining placeholders.
 
 ## 🖼️ The photos on the site
 
