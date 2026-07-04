@@ -9,6 +9,11 @@ no server needed. It works in three languages — **Albanian (default), English,
 
 ---
 
+## 🌍 LIVE at: https://beolaosmani-collab.github.io/beola-website/
+
+The site is published on the internet (free GitHub Pages). Any change you push to
+the `main` branch goes live automatically within ~1 minute.
+
 ## 🚀 How to view it
 
 - **On your computer:** double-click `index.html` — it opens in your browser.
