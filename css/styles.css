@@ -107,13 +107,11 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; gap: 20px; height: 72px; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
-.logo-mark {
-  background: var(--red); color: #fff; font-weight: 800; font-size: .82rem;
-  padding: 4px 7px; border-radius: 6px; letter-spacing: .02em;
-}
-.logo-text { display: flex; flex-direction: column; line-height: 1; font-size: 1.15rem; letter-spacing: .02em; }
-.logo-text small { font-size: .58rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-top: 3px; }
+.logo { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1; }
+.appliance-strip { width: 74px; height: auto; color: var(--red); display: block; }
+.logo-word { display: flex; align-items: baseline; gap: 6px; }
+.brand-beola { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 800; font-size: 1.4rem; letter-spacing: .04em; color: var(--charcoal); }
+.brand-shpk { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--red); }
 
 .main-nav { display: flex; gap: 26px; margin-left: 12px; }
 .main-nav a { font-weight: 600; font-size: .96rem; color: var(--charcoal); padding: 6px 0; position: relative; }
@@ -278,8 +276,10 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 /* ----------------------------- Footer ----------------------------- */
 .site-footer { background: var(--charcoal); color: #cfcfcf; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding: 56px 24px 40px; }
-.footer-brand strong { color: #fff; font-size: 1.3rem; display: block; margin-top: 10px; }
-.footer-brand strong span { color: #8f8f8f; font-weight: 600; }
+.footer-logo { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; margin-bottom: 4px; }
+.site-footer .appliance-strip { width: 84px; color: #fff; }
+.site-footer .brand-beola { color: #fff; font-size: 1.55rem; }
+.site-footer .brand-shpk { color: #f0c9c9; }
 .footer-brand p { margin-top: 10px; font-size: .95rem; color: #b6b6b6; max-width: 320px; }
 .footer-brands { margin-top: 14px; }
 .footer-brands li { color: #fff; opacity: .9; font-size: .95rem; }
@@ -323,6 +323,9 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 @media (max-width: 380px) {
   .lang-btn { padding: 7px 8px; font-size: .78rem; }
   .hero-content { padding: 72px 24px 64px; }
+  .appliance-strip { width: 58px; }
+  .brand-beola { font-size: 1.15rem; }
+  .brand-shpk { font-size: .64rem; letter-spacing: .2em; }
 }
 
 /* Respect reduced-motion preference */
