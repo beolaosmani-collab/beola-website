@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.beola.al/sitemap.xml
+Sitemap: https://beolaosmani-collab.github.io/beola-website/sitemap.xml
