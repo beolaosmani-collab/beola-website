@@ -90,7 +90,12 @@ loading, and placed here (the car number plate on the storefront was blurred):
 | `hero.jpg` | Big banner at the top (oven aisle) |
 | `about-workshop.jpg` | About section (your technician at work) |
 | `gallery-washers.jpg` · `gallery-ovens.jpg` · `gallery-warehouse.jpg` | "From our warehouse" gallery in Products |
-| `storefront.jpg` | Locations section (your entrance banner) |
+| `storefront.jpg` | Locations section (your **"B.O BEOLA" road sign**) |
+
+There is also a **trust bar** under the hero with four points taken from your
+marketing material: *Shumicë & Pakicë · Porosi nga Gjermania · Në të gjithë
+Shqipërinë · Korrektesë & profesionalizëm* (edit these in `js/translations.js`,
+keys `trust_*`).
 
 **To swap any photo later:** just replace the file in `images/` with a new one of
 the **same name** (ideally similar shape/landscape). Send me a new photo any time

@@ -35,6 +35,10 @@ const I18N = {
     btn_view_locations: "Shiko Vendndodhjet",
     btn_instagram: "Instagram",
     hero_brands: "Markat kryesore",
+    trust_retail: "Shumicë & Pakicë",
+    trust_germany: "Porosi nga Gjermania",
+    trust_albania: "Në të gjithë Shqipërinë",
+    trust_pro: "Korrektesë & profesionalizëm",
 
     about_kicker: "Rreth Nesh",
     about_title: "Një biznes familjar që familjet shqiptare e besojnë",
@@ -151,6 +155,10 @@ const I18N = {
     btn_view_locations: "View Locations",
     btn_instagram: "Instagram",
     hero_brands: "Main brands",
+    trust_retail: "Wholesale & Retail",
+    trust_germany: "Order from Germany",
+    trust_albania: "Across all Albania",
+    trust_pro: "Correctness & professionalism",
 
     about_kicker: "About Us",
     about_title: "A family business Albanian families trust",
@@ -267,6 +275,10 @@ const I18N = {
     btn_view_locations: "Standorte ansehen",
     btn_instagram: "Instagram",
     hero_brands: "Top-Marken",
+    trust_retail: "Groß- & Einzelhandel",
+    trust_germany: "Bestellung aus Deutschland",
+    trust_albania: "In ganz Albanien",
+    trust_pro: "Korrektheit & Professionalität",
 
     about_kicker: "Über uns",
     about_title: "Ein Familienunternehmen, dem albanische Familien vertrauen",

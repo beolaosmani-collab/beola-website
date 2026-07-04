@@ -166,6 +166,13 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
 .brand-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 0; padding: 0; }
 .brand-list li { font-weight: 800; letter-spacing: .04em; font-size: 1.05rem; color: #fff; opacity: .95; }
 
+/* ----------------------------- Trust bar ----------------------------- */
+.trust-bar { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 20px 24px; }
+.trust-item { display: flex; align-items: center; justify-content: center; gap: 11px; text-align: left; }
+.trust-item svg { color: var(--red); flex-shrink: 0; }
+.trust-item span { font-weight: 700; font-size: .96rem; color: var(--charcoal); letter-spacing: -.01em; line-height: 1.25; }
+
 /* ----------------------------- About ----------------------------- */
 .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: stretch; margin-bottom: 40px; }
 .about-text h2 { margin-bottom: 1rem; }
@@ -308,6 +315,7 @@ p { margin: 0 0 1rem; color: var(--ink-soft); }
   .header-call span:last-child { display: none; } /* show only the phone icon on small screens */
   .header-call { padding: .55rem .8rem; min-height: 44px; } /* keep a comfortable tap target */
   .business-grid, .product-grid, .feature-list, .footer-grid, .product-gallery { grid-template-columns: 1fr; }
+  .trust-inner { grid-template-columns: 1fr 1fr; gap: 14px; }
   .header-inner { gap: 12px; }
   .header-actions { gap: 8px; }
 }
