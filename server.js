@@ -20,7 +20,7 @@ const TYPES = {
 
 http.createServer((req, res) => {
   let urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  if (urlPath === "/") urlPath = "/index.html";
+  if (urlPath.endsWith("/")) urlPath += "index.html";   // serve directory index (e.g. /sq/ → /sq/index.html)
   const filePath = path.join(ROOT, path.normalize(urlPath));
   if (!filePath.startsWith(ROOT)) { res.writeHead(403); return res.end("Forbidden"); }
 
