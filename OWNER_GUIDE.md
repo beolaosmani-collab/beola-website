@@ -76,10 +76,11 @@ titles/notes any time to reflect current stock. Keep 2–4 cards for a clean loo
 
 ## 6. Replace or add photos
 Photos live in the **`images/`** folder. The site looks for these names:
-`hero.jpg`, `about-workshop.jpg`, `storefront.jpg`, `gallery-washers.jpg`,
-`gallery-ovens.jpg`, `gallery-warehouse.jpg`, and `prod-washers.jpg`,
-`prod-dryers.jpg`, `prod-ovens.jpg`, `prod-dishwashers.jpg`, `prod-repair.jpg`,
-`prod-import.jpg`.
+- Hero: `hero.jpg` · About: `about-workshop.jpg`
+- Category cards: `prod-washers.jpg`, `prod-dryers.jpg`, `prod-ovens.jpg`,
+  `prod-dishwashers.jpg`, `prod-fridges.jpg`, `prod-repair.jpg`
+- Gallery (6): `gallery-1.jpg` … `gallery-6.jpg`  (also used by "Products in focus")
+- Storefront/sign: `storefront.jpg`
 
 To swap a photo, replace the `.jpg` with the same name (landscape looks best;
 keep the hero wide). Then a `.webp` copy should be made for speed:

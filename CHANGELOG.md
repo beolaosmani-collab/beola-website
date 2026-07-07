@@ -1,5 +1,18 @@
 # Changelog
 
+## Retail redesign — appliance-shop layout (Neptun / MediaMarkt logic)
+- **New order:** Hero → Product Categories → Products in focus → Why choose us → Branches (with maps) → Gallery → About → FAQ → Contact.
+- **Header:** one clean row, short labels (Produktet · Degët · Rreth Nesh · Galeria · Pyetje · Kontakt), shorter sticky height (64px), no wrapping.
+- **Hero:** brighter warehouse photo + lighter overlay; commercial headline/subtitle; buttons Call / WhatsApp / See products / See branches; brand strip.
+- **Product Categories** (moved right after hero): 6 cards with real category photos + green "Pyet për disponueshmëri" WhatsApp CTAs — added **Frigoriferë**, added **Servis & Riparime**, dropped the import card.
+- **Produkte në fokus:** 4 product highlights (incl. "Oferta për shumicë") with green "Pyet në WhatsApp".
+- **Why choose us:** 4 practical reasons. **About** shortened + 4 trust boxes.
+- **Branches:** each card now contains its map (consistent size) — merged the separate Locations section. **FAQ** moved to just before Contact and made compact. Removed the reviews and process sections.
+- **Gallery:** curated to 6 bright warehouse photos (3/2/1 grid), no messy or repeated shots.
+- **Contact:** info block + simple 3-field WhatsApp form (Emri · Numri · Çfarë po kërkoni?).
+- Tighter spacing, subtle bordered cards, less shadow, consistent image ratios; brand legal name → **B.O. BEOLA SHPK**. Mobile: no horizontal scroll, large tap targets, compact maps.
+
+
 ## Production upgrade — trilingual static generator, SEO, conversion & performance
 
 ### Architecture

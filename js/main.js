@@ -42,8 +42,7 @@
     var lines = [d.greeting];
     lines.push(d.lName + ": " + field("name").value.trim());
     lines.push(d.lPhone + ": " + field("phone").value.trim());
-    if (field("time").value.trim()) lines.push(d.lTime + ": " + field("time").value.trim());
-    if (field("message").value.trim()) lines.push(d.lMessage + ": " + field("message").value.trim());
+    if (field("need") && field("need").value.trim()) lines.push(d.lNeed + ": " + field("need").value.trim());
     return lines.join("\n");
   }
 
