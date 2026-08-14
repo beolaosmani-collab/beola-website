@@ -44,6 +44,7 @@ const IC = {
   truck: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2 7h12v8H2zM14 10h4l3 3v2h-7zM7 19a2 2 0 100-4 2 2 0 000 4zM18 19a2 2 0 100-4 2 2 0 000 4z"/></svg>`,
   retail: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 9l2-4h14l2 4M4 9v10h16V9M3 9h18M9 13h6"/></svg>`,
   wrench: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M14.7 6.3a3.5 3.5 0 0 0-4.6 4.2l-6 6 2.4 2.4 6-6a3.5 3.5 0 0 0 4.2-4.6l-2 2-1.9-1.9 2-2z"/></svg>`,
+  grid: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>`,
 };
 const WHY_IC = { check: IC.check, truck: IC.truck, retail: IC.retail, wrench: IC.wrench };
 
@@ -200,7 +201,7 @@ function heroSection(lang, P, t) {
         <div class="hero-buttons">
           <a href="${telHref(C.phone1Dial)}" class="btn btn-primary">${IC.call}<span>${esc(t.btn_call)}</span></a>
           <a href="${waHref(t.wa_greeting)}" class="btn btn-whatsapp" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.btn_wa)}</span></a>
-          <a href="#products" class="btn btn-outline">${esc(t.btn_products)}</a>
+          <a href="#products" class="btn btn-outline">${IC.grid}<span>${esc(t.btn_products)}</span></a>
           <a href="#branches" class="btn btn-outline">${IC.pin}<span>${esc(t.btn_branches)}</span></a>
         </div>
         <div class="hero-brands"><span class="hero-brands-label">${esc(t.brands_label)}</span><ul class="brand-list">${brandStrip}</ul></div>

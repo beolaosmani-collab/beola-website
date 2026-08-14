@@ -7,6 +7,14 @@
 (function () {
   "use strict";
 
+  /* ---- Sticky header gains a shadow once the page is scrolled ---- */
+  var header = document.getElementById("top");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 8); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   /* ---- Mobile navigation ---- */
   var toggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("main-nav");

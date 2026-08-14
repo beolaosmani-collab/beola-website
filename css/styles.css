@@ -62,7 +62,8 @@ ul { margin: 0; }
 .skip-link:focus { left: 0; }
 
 /* ----------------------------- Header (compact) ----------------------------- */
-.site-header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); transition: box-shadow .2s ease; }
+.site-header.scrolled { box-shadow: 0 2px 14px rgba(0,0,0,.09); }
 .header-inner { display: flex; align-items: center; gap: 18px; height: 64px; }
 .logo { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1; }
 .appliance-strip { width: 62px; height: auto; color: var(--red); }
@@ -91,12 +92,12 @@ ul { margin: 0; }
 .hero-content { position: relative; z-index: 2; padding: 70px 20px 64px; max-width: 860px; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
 .hero-eyebrow { display: inline-block; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ffd0d0; margin-bottom: .8rem; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.3rem); color: #fff; margin-bottom: .8rem; }
-.hero-sub { font-size: clamp(1.02rem, 2vw, 1.22rem); color: rgba(255,255,255,.94); max-width: 620px; margin-bottom: 1.5rem; }
-.hero-phone { display: inline-flex; flex-direction: column; margin-bottom: 1.3rem; }
+.hero-sub { font-size: clamp(1.02rem, 2vw, 1.22rem); color: rgba(255,255,255,.94); max-width: 620px; margin-bottom: 1.15rem; }
+.hero-phone { display: inline-flex; flex-direction: column; margin-bottom: 1rem; }
 .hero-phone-label { font-size: .74rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.75); font-weight: 700; }
 .hero-phone-number { font-size: clamp(1.5rem, 3.6vw, 2.1rem); font-weight: 800; color: #fff; }
 .hero-phone-number:hover { color: #ffd9d9; }
-.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.8rem; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem; }
 .hero-brands { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 20px; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,.2); }
 .hero-brands-label { font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.7); font-weight: 700; }
 .brand-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; }
@@ -264,7 +265,8 @@ ul { margin: 0; }
   .cat-grid, .focus-grid, .why-grid, .branch-grid, .gallery-grid, .feature-list { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 26px; padding: 36px 20px 28px; }
   .hero-content { padding: 56px 20px 48px; }
-  .hero-buttons .btn { flex: 1 1 auto; }
+  .hero-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-buttons .btn { width: 100%; }
 }
 @media (max-width: 380px) {
   .lang-btn { padding: 6px 7px; font-size: .76rem; }
