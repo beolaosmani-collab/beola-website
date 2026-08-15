@@ -586,7 +586,7 @@ function productPage(lang, p) {
   const P = prefixOf(sub);
   const cat = catById(p.category);
   const av = availOf(p);
-  const title = `${T(p.title, lang)}${p.brand ? " " + p.brand : ""} | ${SITE.brand.short} Tiranë`;
+  const title = `${T(p.title, lang)} | ${SITE.brand.short} Tiranë`;
   const desc = `${T(p.title, lang)}${p.brand ? " — " + p.brand : ""}${cat ? " · " + T(cat.name, lang) : ""}. ${T({ sq: "Pyet për çmimin dhe disponueshmërinë.", en: "Ask for price and availability.", de: "Preis und Verfügbarkeit anfragen." }, lang)}`;
   const trail = [
     { label: t.back_home, href: `${P}${lang}/`, name: t.back_home, url: absUrl(pagePath(lang, "")) },
