@@ -4,11 +4,11 @@
    Edit this file, then rebuild:  node build.mjs
    (or edit it on GitHub — the GitHub Action rebuilds automatically.)
 
-   A phone number, email or address is written ONCE here and appears correctly
-   on every page and in every language. See OWNER_GUIDE.md.
+   A phone number, email, address or product is written ONCE here and appears
+   correctly on every page and in every language. See OWNER_GUIDE.md.
 
-   🔴 Anything marked TODO is left empty/false on purpose so the site never shows
-      a claim that isn't true. Fill it in only when it is real.
+   🔴 TODO markers are left empty/false on purpose so the site never shows a claim
+      that isn't true. Never invent prices, models, specs, stock counts or reviews.
 ============================================================================= */
 
 export const SITE = {
@@ -25,14 +25,14 @@ export const SITE = {
   brand: {
     short: "B.O. BEOLA",
     legal: "B.O. BEOLA SHPK",
-    appliances: ["Miele", "Siemens", "Bosch", "AEG"],
+    appliances: ["Miele", "Bosch", "Siemens", "AEG"],
   },
 
-  /* ---------- Contact (edit here, updates everywhere) ---------- */
+  /* ---------- Contact ---------- */
   contact: {
     phone1Display: "+355 68 207 3024",
     phone1Dial: "+355682073024",
-    phone2Display: "+355 68 901 1606",   // "" to hide the second number
+    phone2Display: "+355 68 901 1606",   // "" to hide
     phone2Dial: "+355689011606",
     whatsapp: "355682073024",            // digits only, no +
     email: "beolashpk@gmail.com",
@@ -49,87 +49,124 @@ export const SITE = {
       en: ["Monday – Saturday: 09:00 – 17:00", "Sunday: 09:00 – 12:30"],
       de: ["Montag – Samstag: 09:00 – 17:00", "Sonntag: 09:00 – 12:30"],
     },
+    short: { sq: "Hën–Sht 9:00–17:00 · Diel 9:00–12:30", en: "Mon–Sat 9:00–17:00 · Sun 9:00–12:30", de: "Mo–Sa 9:00–17:00 · So 9:00–12:30" },
   },
 
   /* ---------- Unconfirmed claims — leave false/null until true ---------- */
-  claims: {
-    freeDelivery: false, warrantyMonths: null, sameDayRepair: false, financing: false,
+  claims: { freeDelivery: false, warrantyMonths: null, sameDayRepair: false, financing: false },
+
+  /* ---------- Branches ---------- */
+  branches: [
+    { slug: "yzberisht", area: "Yzberisht",
+      address: "Rruga Sabaudin Gabrani, Yzberisht, përballë Spitalit Amerikan, Tiranë 1001", postalCode: "1001",
+      landmark: { sq: "Përballë Spitalit Amerikan", en: "Opposite the American Hospital", de: "Gegenüber dem Amerikanischen Krankenhaus" }, isMain: true },
+    { slug: "mezez", area: "Mëzez",
+      address: "Rruga Gani Toptani, Mëzez, pranë Burger Ija, Tiranë", postalCode: "",
+      landmark: { sq: "Pranë Burger Ija", en: "Near Burger Ija", de: "Nahe Burger Ija" }, isMain: false },
+    { slug: "vaqarr", area: "Vaqarr",
+      address: "Rruga Demir Çela, Vaqarr, pranë Bar-Restorant Trëndelina, Tiranë", postalCode: "",
+      landmark: { sq: "Pranë Bar-Restorant Trëndelina", en: "Near Bar-Restaurant Trëndelina", de: "Nahe Bar-Restaurant Trëndelina" }, isMain: false },
+  ],
+
+  /* ---------- Shop-by-category tiles ---------- */
+  categories: [
+    { id: "washers", image: "prod-washers", title: { sq: "Lavatriçe", en: "Washing Machines", de: "Waschmaschinen" } },
+    { id: "dryers", image: "prod-dryers", title: { sq: "Tharëse", en: "Dryers", de: "Trockner" } },
+    { id: "ovens", image: "prod-ovens", title: { sq: "Furra & Kuzhina", en: "Ovens & Cookers", de: "Backöfen & Herde" } },
+    { id: "dishwashers", image: "prod-dishwashers", title: { sq: "Lavastovilje", en: "Dishwashers", de: "Geschirrspüler" } },
+    { id: "fridges", image: "prod-fridges", title: { sq: "Frigoriferë", en: "Fridges", de: "Kühlschränke" } },
+    { id: "repair", image: "prod-repair", title: { sq: "Servis & Riparime", en: "Service & Repairs", de: "Service & Reparaturen" } },
+  ],
+
+  /* ---------- Category nav row (retail header sub-nav) ---------- */
+  catnav: [
+    { label: { sq: "Lavatriçe", en: "Washing Machines", de: "Waschmaschinen" }, href: "#categories" },
+    { label: { sq: "Tharëse", en: "Dryers", de: "Trockner" }, href: "#categories" },
+    { label: { sq: "Furra & Kuzhina", en: "Ovens & Cookers", de: "Backöfen & Herde" }, href: "#categories" },
+    { label: { sq: "Lavastovilje", en: "Dishwashers", de: "Geschirrspüler" }, href: "#categories" },
+    { label: { sq: "Frigoriferë", en: "Fridges", de: "Kühlschränke" }, href: "#categories" },
+    { label: { sq: "Pajisje Profesionale", en: "Professional", de: "Profigeräte" }, href: "#professional" },
+    { label: { sq: "Servis", en: "Service", de: "Service" }, href: "#service" },
+    { label: { sq: "Të reja", en: "New Arrivals", de: "Neu" }, href: "#arrivals" },
+  ],
+
+  /* ---------- Products / New arrivals ------------------------------------------
+     👉 OWNER: replace/extend these with your real current stock. Each card shows a
+     photo, brand, name, category, honest badges and "Ask for price" (opens WhatsApp).
+     NEVER add prices, model numbers, specs or stock counts you can't stand behind.
+     Badges available: "new", "miele", "bosch", "siemens", "aeg", "import",
+     "checked", "professional", "wholesale".                                       */
+  products: [
+    { image: "prod-washers", brand: "Miele", badges: ["miele", "checked"],
+      name: { sq: "Lavatriçe Miele", en: "Miele washing machine", de: "Miele Waschmaschine" }, cat: "washers" },
+    { image: "prod-ovens", brand: "Bosch", badges: ["bosch", "import"],
+      name: { sq: "Furrë inox Bosch", en: "Bosch stainless oven", de: "Bosch Edelstahl-Backofen" }, cat: "ovens" },
+    { image: "prod-dishwashers", brand: "Siemens", badges: ["siemens", "checked"],
+      name: { sq: "Lavastovilje Siemens", en: "Siemens dishwasher", de: "Siemens Geschirrspüler" }, cat: "dishwashers" },
+    { image: "prod-dryers", brand: "AEG", badges: ["aeg", "import"],
+      name: { sq: "Tharëse AEG", en: "AEG dryer", de: "AEG Trockner" }, cat: "dryers" },
+    { image: "prod-fridges", brand: "", badges: ["import", "checked"],
+      name: { sq: "Frigorifer gjerman", en: "German fridge", de: "Deutscher Kühlschrank" }, cat: "fridges" },
+    { image: "gallery-1", brand: "", badges: ["new"],
+      name: { sq: "Kuzhinë me pianurë qeramike", en: "Cooker with ceramic hob", de: "Herd mit Ceranfeld" }, cat: "ovens" },
+    { image: "gallery-3", brand: "Miele", badges: ["miele", "new"],
+      name: { sq: "Lavatriçe premium", en: "Premium washing machine", de: "Premium-Waschmaschine" }, cat: "washers" },
+    { image: "gallery-2", brand: "", badges: ["import"],
+      name: { sq: "Furrë e integruar", en: "Built-in oven", de: "Einbau-Backofen" }, cat: "ovens" },
+  ],
+
+  /* ---------- Shop by brand (text treatment — no downloaded logos) ---------- */
+  brands: [
+    { name: "Miele", note: { sq: "Cilësi premium", en: "Premium quality", de: "Premium-Qualität" } },
+    { name: "Bosch", note: { sq: "Besueshmëri", en: "Reliability", de: "Zuverlässigkeit" } },
+    { name: "Siemens", note: { sq: "Teknologji", en: "Technology", de: "Technologie" } },
+    { name: "AEG", note: { sq: "Efikasitet", en: "Efficiency", de: "Effizienz" } },
+  ],
+
+  /* ---------- Why choose (compact trust strip) ---------- */
+  whyus: [
+    { icon: "check", title: { sq: "Të kontrolluara & gati për përdorim", en: "Inspected & ready to use", de: "Geprüft & einsatzbereit" } },
+    { icon: "truck", title: { sq: "Import direkt nga Gjermania", en: "Direct import from Germany", de: "Direktimport aus Deutschland" } },
+    { icon: "pin", title: { sq: "3 degë në Tiranë", en: "3 locations in Tirana", de: "3 Filialen in Tirana" } },
+    { icon: "retail", title: { sq: "Shumicë & Pakicë", en: "Wholesale & Retail", de: "Groß- & Einzelhandel" } },
+    { icon: "wrench", title: { sq: "Servis & ekspertizë teknike", en: "Service & technical expertise", de: "Service & technische Expertise" } },
+  ],
+
+  /* ---------- Professional / commercial equipment ---------- */
+  professional: {
+    image: "gallery-5",
+    title: { sq: "Pajisje profesionale", en: "Professional equipment", de: "Profigeräte" },
+    text: {
+      sq: "Furra, kuzhina dhe pajisje elektroshtëpiake gjermane për restorante, kafene dhe biznese. Blerje me shumicë dhe këshillim.",
+      en: "German ovens, cookers and appliances for restaurants, cafés and businesses. Wholesale supply and advice.",
+      de: "Deutsche Backöfen, Herde und Geräte für Restaurants, Cafés und Betriebe. Großhandel und Beratung.",
+    },
+    cta: { sq: "Pyet për pajisje profesionale", en: "Ask about professional equipment", de: "Profigeräte anfragen" },
   },
 
-  /* ---------- Branches (all one company; each has its own page) ---------- */
-  branches: [
-    {
-      slug: "yzberisht", area: "Yzberisht",
-      address: "Rruga Sabaudin Gabrani, Yzberisht, përballë Spitalit Amerikan, Tiranë 1001",
-      postalCode: "1001",
-      landmark: { sq: "Përballë Spitalit Amerikan", en: "Opposite the American Hospital", de: "Gegenüber dem Amerikanischen Krankenhaus" },
-      isMain: true,
+  /* ---------- Service & repairs ---------- */
+  service: {
+    image: "about-workshop",
+    title: { sq: "Servis & Riparime", en: "Service & Repairs", de: "Service & Reparaturen" },
+    text: {
+      sq: "Ekspertizë teknike para dhe pas blerjes. Ekipi ynë kontrollon dhe servison pajisjet elektroshtëpiake gjermane.",
+      en: "Technical expertise before and after purchase. Our team checks and services German household appliances.",
+      de: "Technische Expertise vor und nach dem Kauf. Unser Team prüft und wartet deutsche Haushaltsgeräte.",
     },
-    {
-      slug: "mezez", area: "Mëzez",
-      address: "Rruga Gani Toptani, Mëzez, pranë Burger Ija, Tiranë", postalCode: "",
-      landmark: { sq: "Pranë Burger Ija", en: "Near Burger Ija", de: "Nahe Burger Ija" },
-      isMain: false,
-    },
-    {
-      slug: "vaqarr", area: "Vaqarr",
-      address: "Rruga Demir Çela, Vaqarr, pranë Bar-Restorant Trëndelina, Tiranë", postalCode: "",
-      landmark: { sq: "Pranë Bar-Restorant Trëndelina", en: "Near Bar-Restaurant Trëndelina", de: "Nahe Bar-Restaurant Trëndelina" },
-      isMain: false,
-    },
-  ],
+    cta: { sq: "Kontakto servisin", en: "Contact service", de: "Service kontaktieren" },
+  },
 
-  /* ---------- Product categories (real photos in /images) ---------- */
-  categories: [
-    { id: "washers", image: "prod-washers",
-      title: { sq: "Lavatriçe", en: "Washing Machines", de: "Waschmaschinen" },
-      desc: { sq: "Lavatriçe gjermane Miele, Siemens, Bosch e AEG — të kontrolluara dhe gati për përdorim.", en: "German Miele, Siemens, Bosch and AEG washing machines — inspected and ready to use.", de: "Deutsche Waschmaschinen von Miele, Siemens, Bosch und AEG — geprüft und einsatzbereit." } },
-    { id: "dryers", image: "prod-dryers",
-      title: { sq: "Tharëse", en: "Dryers", de: "Trockner" },
-      desc: { sq: "Tharëse gjermane efikase për rroba, ideale për familjet shqiptare.", en: "Efficient German dryers, ideal for Albanian family homes.", de: "Effiziente deutsche Trockner, ideal für albanische Familien." } },
-    { id: "ovens", image: "prod-ovens",
-      title: { sq: "Furra & Kuzhina", en: "Ovens & Cookers", de: "Backöfen & Herde" },
-      desc: { sq: "Furra inox dhe kuzhina gjermane me pianura qeramike, gati për montim.", en: "Stainless German ovens and ceramic-hob cookers, ready to install.", de: "Edelstahl-Backöfen und deutsche Herde mit Ceranfeld, montagebereit." } },
-    { id: "dishwashers", image: "prod-dishwashers",
-      title: { sq: "Lavastovilje", en: "Dishwashers", de: "Geschirrspüler" },
-      desc: { sq: "Lavastovilje gjermane që kursejnë ujë e energji, me performancë të lartë.", en: "German dishwashers that save water and energy, with high performance.", de: "Deutsche Geschirrspüler, die Wasser und Energie sparen, mit hoher Leistung." } },
-    { id: "fridges", image: "prod-fridges",
-      title: { sq: "Frigoriferë", en: "Fridges", de: "Kühlschränke" },
-      desc: { sq: "Frigoriferë gjermanë të kontrolluar, për çdo madhësi kuzhine.", en: "Inspected German fridges, for every kitchen size.", de: "Geprüfte deutsche Kühlschränke, für jede Küchengröße." } },
-    { id: "repair", image: "prod-repair",
-      title: { sq: "Servis & Riparime", en: "Service & Repairs", de: "Service & Reparaturen" },
-      desc: { sq: "Servis dhe riparim i pajisjeve elektroshtëpiake, nga një ekip me përvojë.", en: "Service and repair of household appliances, from an experienced team.", de: "Service und Reparatur von Haushaltsgeräten durch ein erfahrenes Team." } },
-  ],
+  /* ---------- About + stats ---------- */
+  about: {
+    image: "about-workshop",
+    stats: [
+      { num: "20+", label: { sq: "Vite përvojë", en: "Years of experience", de: "Jahre Erfahrung" } },
+      { num: "3", label: { sq: "Degë në Tiranë", en: "Locations in Tirana", de: "Filialen in Tirana" } },
+      { num: { sq: "Gjermani", en: "Germany", de: "Deutschland" }, label: { sq: "Import direkt", en: "Direct imports", de: "Direktimport" } },
+    ],
+  },
 
-  /* ---------- Products in focus (edit any time to match current stock) ---------- */
-  featured: [
-    { image: "gallery-3",
-      title: { sq: "Lavatriçe premium", en: "Premium washing machines", de: "Premium-Waschmaschinen" },
-      note: { sq: "Miele, Bosch & Siemens të kontrolluara — stok që ndryshon çdo javë.", en: "Inspected Miele, Bosch & Siemens — stock that changes weekly.", de: "Geprüfte Miele, Bosch & Siemens — Bestand wechselt wöchentlich." } },
-    { image: "prod-ovens",
-      title: { sq: "Furra & kuzhina", en: "Ovens & cookers", de: "Backöfen & Herde" },
-      note: { sq: "Furra inox dhe kuzhina me pianura qeramike — gati për montim.", en: "Stainless ovens and ceramic-hob cookers — ready to install.", de: "Edelstahl-Backöfen und Herde mit Ceranfeld — montagebereit." } },
-    { image: "gallery-4",
-      title: { sq: "Të sapoardhura nga Gjermania", en: "Fresh arrivals from Germany", de: "Neu aus Deutschland" },
-      note: { sq: "Ngarkesa të reja çdo muaj në tri degët tona.", en: "New shipments every month across our three branches.", de: "Jeden Monat neue Lieferungen in unseren drei Filialen." } },
-    { image: "gallery-1",
-      title: { sq: "Oferta për shumicë", en: "Wholesale offers", de: "Großhandelsangebote" },
-      note: { sq: "Çmime të favorshme për blerje me shumicë — pyetni për ofertën.", en: "Favourable prices for wholesale buyers — ask for the offer.", de: "Günstige Preise für Großabnehmer — fragen Sie nach dem Angebot." } },
-  ],
-
-  /* ---------- Why choose us (4 practical reasons) ---------- */
-  whyus: [
-    { icon: "check", title: { sq: "Të kontrolluara & gati për përdorim", en: "Inspected & ready to use", de: "Geprüft & einsatzbereit" },
-      desc: { sq: "Çdo pajisje kontrollohet nga teknikët tanë përpara se të dalë në shitje.", en: "Every appliance is checked by our technicians before it goes on sale.", de: "Jedes Gerät wird vor dem Verkauf von unseren Technikern geprüft." } },
-    { icon: "truck", title: { sq: "Import direkt nga Gjermania", en: "Direct import from Germany", de: "Direktimport aus Deutschland" },
-      desc: { sq: "Sjellim pajisjet drejtpërdrejt nga Gjermania, pa ndërmjetës.", en: "We bring appliances straight from Germany, with no middlemen.", de: "Wir bringen Geräte direkt aus Deutschland, ohne Zwischenhändler." } },
-    { icon: "retail", title: { sq: "Shumicë & Pakicë", en: "Wholesale & Retail", de: "Groß- & Einzelhandel" },
-      desc: { sq: "Blerje për familje dhe për biznese, me çmime konkurruese.", en: "For households and for businesses, at competitive prices.", de: "Für Haushalte und Unternehmen, zu wettbewerbsfähigen Preisen." } },
-    { icon: "wrench", title: { sq: "Servis & ekspertizë teknike", en: "Service & technical expertise", de: "Service & technische Expertise" },
-      desc: { sq: "Ju qëndrojmë pranë edhe pas blerjes, me servis dhe këshilla.", en: "We stay by your side after the sale, with service and advice.", de: "Wir bleiben auch nach dem Kauf an Ihrer Seite — mit Service und Beratung." } },
-  ],
-
-  /* ---------- Warehouse gallery (6 curated photos) ---------- */
+  /* ---------- Gallery ---------- */
   gallery: [
     { image: "gallery-1", alt: { sq: "Kuzhina dhe furra gjermane në radhë", en: "German cookers and ovens lined up", de: "Deutsche Herde und Backöfen in Reihe" } },
     { image: "gallery-2", alt: { sq: "Korsia e furrave në magazinën tonë", en: "Aisle of ovens in our warehouse", de: "Backofen-Gang in unserem Lager" } },
@@ -157,25 +194,29 @@ export const SITE = {
   i18n: {
     sq: {
       dir: "Elektroshtëpiake Gjermane",
+      topbar: ["Import direkt nga Gjermania", "Mbi 20 vite përvojë", "3 degë në Tiranë"],
+      search_ph: "Kërko: lavatriçe, furra, Miele, Bosch…",
+      search_aria: "Kërko produkte", search_btn: "Kërko",
       nav_products: "Produktet", nav_branches: "Degët", nav_about: "Rreth Nesh", nav_gallery: "Galeria", nav_faq: "Pyetje", nav_contact: "Kontakt",
       skip: "Kalo te përmbajtja", menu: "Menyja", call_aria: "Na telefononi", lang_switch: "Gjuha",
 
       hero_eyebrow: "Elektroshtëpiake gjermane · Tiranë",
-      hero_h1: "Elektroshtëpiake Gjermane në Tiranë",
-      hero_sub: "Lavatriçe, tharëse, furra, lavastovilje dhe frigoriferë nga Gjermania — të kontrolluara, gati për përdorim.",
-      hero_call_label: "Na telefononi",
-      btn_call: "Telefono Tani", btn_wa: "WhatsApp", btn_products: "Shiko Produktet", btn_branches: "Shiko Degët", btn_directions: "Merr Udhëzime",
+      hero_h1: "Elektroshtëpiake gjermane cilësore për shtëpinë tuaj.",
+      hero_sub: "Miele, Bosch, Siemens, AEG dhe të tjera — të importuara nga Gjermania, të kontrolluara dhe gati për përdorim.",
+      hero_cta1: "Shiko produktet", hero_cta2: "Vizito degët",
+      trust_checked: "Të kontrolluara", trust_import: "Import nga Gjermania", trust_retail: "Shumicë & Pakicë", trust_service: "Servis teknik",
       brands_label: "Markat",
 
-      cat_kicker: "Produktet", cat_title: "Kategoritë e produkteve",
-      cat_sub: "Elektroshtëpiake gjermane të kontrolluara — zgjidhni kategorinë dhe na pyesni për disponueshmërinë.",
-      cat_cta: "Pyet për disponueshmëri",
+      cat_kicker: "Bli sipas kategorisë", cat_title: "Kategoritë e produkteve",
+      arrivals_kicker: "Të reja", arrivals_title: "Të sapoardhura nga Gjermania",
+      arrivals_sub: "Inventari ynë ndryshon shpesh. Na kontaktoni për të konfirmuar disponueshmërinë e sotme.",
+      pd_ask_price: "Pyet për çmimin", pd_avail: "Pyet për disponueshmërinë",
 
-      feat_kicker: "Në fokus", feat_title: "Produkte në fokus",
-      feat_sub: "Stoku ndryshon shpesh. Na shkruani në WhatsApp për disponueshmërinë e sotme.",
-      feat_cta: "Pyet në WhatsApp",
+      brand_kicker: "Markat", brand_title: "Bli sipas markës",
 
-      why_kicker: "Pse ne", why_title: "Pse të zgjidhni B.O. BEOLA",
+      why_title: "Pse të zgjidhni B.O. BEOLA",
+
+      prof_kicker: "Për biznese", service_kicker: "Mbështetje",
 
       br_kicker: "Degët tona", br_title: "Degët Tona",
       br_sub: "Tri degë në zonën e Tiranës — e njëjta cilësi dhe i njëjti besim në çdo vendndodhje.",
@@ -183,16 +224,11 @@ export const SITE = {
       label_address: "Adresa", label_phone: "Telefoni", label_email: "Email", label_instagram: "Instagram", label_hours: "Orari", label_services: "Shërbimet",
       branch_desc: "Shitje, import dhe servis i pajisjeve elektroshtëpiake gjermane — Miele, Siemens, Bosch, AEG.",
       branch_services: ["Shitje pajisjesh elektroshtëpiake gjermane", "Import direkt nga Gjermania", "Servis dhe riparime teknike", "Këshillim për blerje"],
-      maps_title: "Hartat e degëve",
 
-      gal_kicker: "Galeria", gal_title: "Nga magazina jonë",
+      ab_kicker: "Rreth Nesh", ab_title: "Mbi 20 vite përvojë",
+      about_p1: "Biznes familjar me bazë në Tiranë, B.O. BEOLA importon me kujdes pajisje elektroshtëpiake të përzgjedhura drejtpërdrejt nga Gjermania — të kontrolluara dhe të gatshme për përdorim.",
 
-      ab_kicker: "Rreth Nesh", ab_title: "Një biznes familjar që familjet shqiptare e besojnë",
-      about_p1: "B.O. BEOLA është biznes familjar në Tiranë me mbi 20 vite eksperiencë në importin, shitjen dhe servisimin e pajisjeve elektroshtëpiake gjermane. Sjellim pajisje nga marka si Miele, Siemens, Bosch dhe AEG, të kontrolluara dhe të gatshme për përdorim.",
-      feat_family_t: "Biznes familjar", feat_family_d: "I udhëhequr nga vlerat e familjes dhe kujdesi për çdo klient.",
-      feat_years_t: "Mbi 20 vite eksperiencë", feat_years_d: "Dy dekada pune dhe besimi në tregun shqiptar.",
-      feat_import_t: "Import nga Gjermania", feat_import_d: "Pajisje cilësore të sjella drejtpërdrejt nga Gjermania.",
-      feat_tech_t: "Servis & ekspertizë teknike", feat_tech_d: "Kontroll dhe servis profesional i çdo pajisjeje.",
+      gal_kicker: "Galeria", gal_title: "Nga dyqanet tona", gal_zoom: "Zmadho foton",
 
       faq_kicker: "Pyetje", faq_title: "Pyetje të shpeshta",
 
@@ -207,8 +243,13 @@ export const SITE = {
       form_note: "Duke klikuar, hapet WhatsApp me mesazhin tuaj gati për dërgim.",
       form_err_name: "Ju lutemi shkruani emrin tuaj.", form_err_phone: "Ju lutemi shkruani një numër telefoni.",
       form_ok: "Po hapet WhatsApp me mesazhin tuaj. Nëse nuk hapet, na telefononi.",
-      wa_greeting: "Përshëndetje B.O. BEOLA, dëshiroj të pyes:", wa_availability: "Përshëndetje B.O. BEOLA, dua të pyes për disponueshmërinë:",
+      wa_generic: "Përshëndetje B.O. BEOLA, dëshiroj të pyes:",
+      wa_price: "Përshëndetje B.O. BEOLA, sa kushton:",
+      wa_search: "Përshëndetje B.O. BEOLA, po kërkoj:",
+      wa_prof: "Përshëndetje B.O. BEOLA, dua të pyes për pajisje profesionale / shumicë:",
+      wa_service: "Përshëndetje B.O. BEOLA, kam nevojë për servis:",
 
+      btn_call: "Telefono", btn_wa: "WhatsApp", btn_directions: "Merr Udhëzime", btn_ask_wa: "Pyet në WhatsApp",
       footer_tagline: "Elektroshtëpiake gjermane të besueshme për familjet shqiptare.",
       footer_quick: "Lidhje të shpejta", footer_contact: "Kontakt", footer_branches: "Degët",
       footer_rights: "Të gjitha të drejtat e rezervuara.",
@@ -218,25 +259,29 @@ export const SITE = {
 
     en: {
       dir: "German Household Appliances",
+      topbar: ["Direct import from Germany", "20+ years of experience", "3 locations in Tirana"],
+      search_ph: "Search: washing machines, ovens, Miele, Bosch…",
+      search_aria: "Search products", search_btn: "Search",
       nav_products: "Products", nav_branches: "Branches", nav_about: "About", nav_gallery: "Gallery", nav_faq: "FAQ", nav_contact: "Contact",
       skip: "Skip to content", menu: "Menu", call_aria: "Call us", lang_switch: "Language",
 
-      hero_eyebrow: "German household appliances · Tirana",
-      hero_h1: "German Appliances in Tirana",
-      hero_sub: "German washing machines, dryers, ovens, dishwashers and fridges — inspected and ready to use.",
-      hero_call_label: "Call us",
-      btn_call: "Call Now", btn_wa: "WhatsApp", btn_products: "See Products", btn_branches: "See Branches", btn_directions: "Get Directions",
+      hero_eyebrow: "German appliances · Tirana",
+      hero_h1: "Quality German appliances for your home.",
+      hero_sub: "Miele, Bosch, Siemens, AEG and more — imported from Germany, inspected and ready to use.",
+      hero_cta1: "Shop appliances", hero_cta2: "Visit our stores",
+      trust_checked: "Inspected", trust_import: "Imported from Germany", trust_retail: "Retail & Wholesale", trust_service: "Technical service",
       brands_label: "Brands",
 
-      cat_kicker: "Products", cat_title: "Product categories",
-      cat_sub: "Inspected German appliances — pick a category and ask us about availability.",
-      cat_cta: "Ask about availability",
+      cat_kicker: "Shop by category", cat_title: "Product categories",
+      arrivals_kicker: "New", arrivals_title: "New arrivals from Germany",
+      arrivals_sub: "Our inventory changes frequently. Contact us to confirm today's availability.",
+      pd_ask_price: "Ask for price", pd_avail: "Ask about availability",
 
-      feat_kicker: "In focus", feat_title: "Products in focus",
-      feat_sub: "Stock changes often. Message us on WhatsApp for today's availability.",
-      feat_cta: "Ask on WhatsApp",
+      brand_kicker: "Brands", brand_title: "Shop by brand",
 
-      why_kicker: "Why us", why_title: "Why choose B.O. BEOLA",
+      why_title: "Why choose B.O. BEOLA",
+
+      prof_kicker: "For businesses", service_kicker: "Support",
 
       br_kicker: "Our branches", br_title: "Our Branches",
       br_sub: "Three branches around Tirana — the same quality and trust at every location.",
@@ -244,16 +289,11 @@ export const SITE = {
       label_address: "Address", label_phone: "Phone", label_email: "Email", label_instagram: "Instagram", label_hours: "Opening hours", label_services: "Services",
       branch_desc: "Sales, import and service of German household appliances — Miele, Siemens, Bosch, AEG.",
       branch_services: ["Sales of German household appliances", "Direct import from Germany", "Technical service and repairs", "Purchase advice"],
-      maps_title: "Branch maps",
 
-      gal_kicker: "Gallery", gal_title: "From our warehouse",
+      ab_kicker: "About Us", ab_title: "More than 20 years of experience",
+      about_p1: "Family-run and based in Tirana, B.O. BEOLA carefully imports selected household appliances directly from Germany — inspected and ready to use.",
 
-      ab_kicker: "About Us", ab_title: "A family business Albanian families trust",
-      about_p1: "B.O. BEOLA is a family business in Tirana with over 20 years of experience importing, selling and servicing German household appliances. We bring appliances from brands like Miele, Siemens, Bosch and AEG — inspected and ready to use.",
-      feat_family_t: "Family business", feat_family_d: "Led by family values and genuine care for every customer.",
-      feat_years_t: "Over 20 years of experience", feat_years_d: "Two decades of work and trust in the Albanian market.",
-      feat_import_t: "Import from Germany", feat_import_d: "Quality appliances brought directly from Germany.",
-      feat_tech_t: "Service & technical expertise", feat_tech_d: "Professional checking and service of every appliance.",
+      gal_kicker: "Gallery", gal_title: "Inside our stores", gal_zoom: "Enlarge photo",
 
       faq_kicker: "FAQ", faq_title: "Frequently asked questions",
 
@@ -268,8 +308,13 @@ export const SITE = {
       form_note: "Clicking opens WhatsApp with your message ready to send.",
       form_err_name: "Please enter your name.", form_err_phone: "Please enter a phone number.",
       form_ok: "WhatsApp is opening with your message. If it doesn't, please call us.",
-      wa_greeting: "Hello B.O. BEOLA, I'd like to ask:", wa_availability: "Hello B.O. BEOLA, I'd like to ask about availability:",
+      wa_generic: "Hello B.O. BEOLA, I'd like to ask:",
+      wa_price: "Hello B.O. BEOLA, what's the price of:",
+      wa_search: "Hello B.O. BEOLA, I'm looking for:",
+      wa_prof: "Hello B.O. BEOLA, I'd like to ask about professional / wholesale equipment:",
+      wa_service: "Hello B.O. BEOLA, I need service for:",
 
+      btn_call: "Call", btn_wa: "WhatsApp", btn_directions: "Get Directions", btn_ask_wa: "Ask on WhatsApp",
       footer_tagline: "Trusted German household appliances for Albanian homes.",
       footer_quick: "Quick links", footer_contact: "Contact", footer_branches: "Branches",
       footer_rights: "All rights reserved.",
@@ -279,25 +324,29 @@ export const SITE = {
 
     de: {
       dir: "Deutsche Haushaltsgeräte",
+      topbar: ["Direktimport aus Deutschland", "Über 20 Jahre Erfahrung", "3 Filialen in Tirana"],
+      search_ph: "Suche: Waschmaschinen, Backöfen, Miele, Bosch…",
+      search_aria: "Produkte suchen", search_btn: "Suchen",
       nav_products: "Produkte", nav_branches: "Filialen", nav_about: "Über uns", nav_gallery: "Galerie", nav_faq: "FAQ", nav_contact: "Kontakt",
       skip: "Zum Inhalt springen", menu: "Menü", call_aria: "Rufen Sie uns an", lang_switch: "Sprache",
 
       hero_eyebrow: "Deutsche Haushaltsgeräte · Tirana",
-      hero_h1: "Deutsche Haushaltsgeräte in Tirana",
-      hero_sub: "Deutsche Waschmaschinen, Trockner, Backöfen, Geschirrspüler und Kühlschränke — geprüft und einsatzbereit.",
-      hero_call_label: "Rufen Sie uns an",
-      btn_call: "Jetzt anrufen", btn_wa: "WhatsApp", btn_products: "Produkte ansehen", btn_branches: "Filialen ansehen", btn_directions: "Route planen",
+      hero_h1: "Hochwertige deutsche Haushaltsgeräte für Ihr Zuhause.",
+      hero_sub: "Miele, Bosch, Siemens, AEG und mehr — importiert aus Deutschland, geprüft und einsatzbereit.",
+      hero_cta1: "Geräte ansehen", hero_cta2: "Filialen besuchen",
+      trust_checked: "Geprüft", trust_import: "Import aus Deutschland", trust_retail: "Groß- & Einzelhandel", trust_service: "Technischer Service",
       brands_label: "Marken",
 
-      cat_kicker: "Produkte", cat_title: "Produktkategorien",
-      cat_sub: "Geprüfte deutsche Geräte — wählen Sie eine Kategorie und fragen Sie nach der Verfügbarkeit.",
-      cat_cta: "Nach Verfügbarkeit fragen",
+      cat_kicker: "Nach Kategorie", cat_title: "Produktkategorien",
+      arrivals_kicker: "Neu", arrivals_title: "Neu aus Deutschland",
+      arrivals_sub: "Unser Bestand wechselt häufig. Kontaktieren Sie uns für die heutige Verfügbarkeit.",
+      pd_ask_price: "Preis anfragen", pd_avail: "Verfügbarkeit anfragen",
 
-      feat_kicker: "Im Fokus", feat_title: "Produkte im Fokus",
-      feat_sub: "Der Bestand wechselt oft. Schreiben Sie uns auf WhatsApp für die aktuelle Verfügbarkeit.",
-      feat_cta: "Auf WhatsApp fragen",
+      brand_kicker: "Marken", brand_title: "Nach Marke",
 
-      why_kicker: "Warum wir", why_title: "Warum B.O. BEOLA",
+      why_title: "Warum B.O. BEOLA",
+
+      prof_kicker: "Für Betriebe", service_kicker: "Unterstützung",
 
       br_kicker: "Unsere Filialen", br_title: "Unsere Filialen",
       br_sub: "Drei Filialen rund um Tirana — dieselbe Qualität und dasselbe Vertrauen an jedem Standort.",
@@ -305,16 +354,11 @@ export const SITE = {
       label_address: "Adresse", label_phone: "Telefon", label_email: "E-Mail", label_instagram: "Instagram", label_hours: "Öffnungszeiten", label_services: "Leistungen",
       branch_desc: "Verkauf, Import und Service deutscher Haushaltsgeräte — Miele, Siemens, Bosch, AEG.",
       branch_services: ["Verkauf deutscher Haushaltsgeräte", "Direktimport aus Deutschland", "Technischer Service und Reparaturen", "Kaufberatung"],
-      maps_title: "Karten der Filialen",
 
-      gal_kicker: "Galerie", gal_title: "Aus unserem Lager",
+      ab_kicker: "Über uns", ab_title: "Über 20 Jahre Erfahrung",
+      about_p1: "Familiengeführt und in Tirana ansässig, importiert B.O. BEOLA sorgfältig ausgewählte Haushaltsgeräte direkt aus Deutschland — geprüft und einsatzbereit.",
 
-      ab_kicker: "Über uns", ab_title: "Ein Familienunternehmen, dem albanische Familien vertrauen",
-      about_p1: "B.O. BEOLA ist ein Familienunternehmen in Tirana mit über 20 Jahren Erfahrung im Import, Verkauf und Service deutscher Haushaltsgeräte. Wir bringen Geräte von Marken wie Miele, Siemens, Bosch und AEG — geprüft und einsatzbereit.",
-      feat_family_t: "Familienunternehmen", feat_family_d: "Geleitet von Familienwerten und echter Sorgfalt für jeden Kunden.",
-      feat_years_t: "Über 20 Jahre Erfahrung", feat_years_d: "Zwei Jahrzehnte Arbeit und Vertrauen auf dem albanischen Markt.",
-      feat_import_t: "Import aus Deutschland", feat_import_d: "Hochwertige Geräte, direkt aus Deutschland gebracht.",
-      feat_tech_t: "Service & technische Expertise", feat_tech_d: "Professionelle Prüfung und Wartung jedes Geräts.",
+      gal_kicker: "Galerie", gal_title: "In unseren Geschäften", gal_zoom: "Foto vergrößern",
 
       faq_kicker: "FAQ", faq_title: "Häufige Fragen",
 
@@ -329,8 +373,13 @@ export const SITE = {
       form_note: "Ein Klick öffnet WhatsApp mit Ihrer fertigen Nachricht.",
       form_err_name: "Bitte geben Sie Ihren Namen ein.", form_err_phone: "Bitte geben Sie eine Telefonnummer ein.",
       form_ok: "WhatsApp öffnet sich mit Ihrer Nachricht. Falls nicht, rufen Sie uns an.",
-      wa_greeting: "Hallo B.O. BEOLA, ich möchte fragen:", wa_availability: "Hallo B.O. BEOLA, ich möchte nach der Verfügbarkeit fragen:",
+      wa_generic: "Hallo B.O. BEOLA, ich möchte fragen:",
+      wa_price: "Hallo B.O. BEOLA, was kostet:",
+      wa_search: "Hallo B.O. BEOLA, ich suche:",
+      wa_prof: "Hallo B.O. BEOLA, ich möchte nach Profi-/Großhandelsgeräten fragen:",
+      wa_service: "Hallo B.O. BEOLA, ich brauche Service für:",
 
+      btn_call: "Anrufen", btn_wa: "WhatsApp", btn_directions: "Route planen", btn_ask_wa: "Auf WhatsApp fragen",
       footer_tagline: "Zuverlässige deutsche Haushaltsgeräte für albanische Familien.",
       footer_quick: "Schnelllinks", footer_contact: "Kontakt", footer_branches: "Filialen",
       footer_rights: "Alle Rechte vorbehalten.",

@@ -1,7 +1,7 @@
 /* =============================================================================
    B.O. BEOLA SHPK — STATIC SITE GENERATOR  (zero dependencies)
-   Reads data/site.mjs → writes per-language pages with real content baked in.
-       /index.html   /sq/ /en/ /de/   /{lang}/<branch>/   sitemap.xml
+   Reads data/site.mjs → writes per-language retail pages with real content baked
+   in.   /index.html   /sq/ /en/ /de/   /{lang}/<branch>/   sitemap.xml
    Run:  node build.mjs
 ============================================================================= */
 
@@ -15,9 +15,9 @@ const C = SITE.contact;
 const YEAR = 2026;
 
 /* ---------- helpers ---------- */
-const esc = (s) => String(s == null ? "" : s)
-  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const enc = encodeURIComponent;
+const T = (v, lang) => (v && typeof v === "object" ? v[lang] : v);   // per-lang value or plain string
 const prefix = (d) => "../".repeat(d);
 const pagePath = (lang, slug) => slug ? `/${lang}/${slug}/` : `/${lang}/`;
 const absUrl = (p) => SITE.baseUrl + p;
@@ -40,17 +40,29 @@ const IC = {
   wa: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>`,
   pin: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>`,
   ig: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 12 18.6 6.6 6.6 0 0 0 12 5.4zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm6.8-11.2a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>`,
-  check: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 12l2.5 2.5 4.5-5"/></svg>`,
-  truck: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2 7h12v8H2zM14 10h4l3 3v2h-7zM7 19a2 2 0 100-4 2 2 0 000 4zM18 19a2 2 0 100-4 2 2 0 000 4z"/></svg>`,
-  retail: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 9l2-4h14l2 4M4 9v10h16V9M3 9h18M9 13h6"/></svg>`,
-  wrench: `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M14.7 6.3a3.5 3.5 0 0 0-4.6 4.2l-6 6 2.4 2.4 6-6a3.5 3.5 0 0 0 4.2-4.6l-2 2-1.9-1.9 2-2z"/></svg>`,
-  grid: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>`,
+  search: `<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 12l2.5 2.5 4.5-5"/></svg>`,
+  truck: `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2 7h12v8H2zM14 10h4l3 3v2h-7zM7 19a2 2 0 100-4 2 2 0 000 4zM18 19a2 2 0 100-4 2 2 0 000 4z"/></svg>`,
+  retail: `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 9l2-4h14l2 4M4 9v10h16V9M3 9h18M9 13h6"/></svg>`,
+  wrench: `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M14.7 6.3a3.5 3.5 0 0 0-4.6 4.2l-6 6 2.4 2.4 6-6a3.5 3.5 0 0 0 4.2-4.6l-2 2-1.9-1.9 2-2z"/></svg>`,
+  pinB: `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.3" fill="currentColor"/></svg>`,
 };
-const WHY_IC = { check: IC.check, truck: IC.truck, retail: IC.retail, wrench: IC.wrench };
+const WHY_IC = { check: IC.check, truck: IC.truck, retail: IC.retail, wrench: IC.wrench, pin: IC.pinB };
 
 const applianceStrip = `<svg class="appliance-strip" viewBox="0 0 116 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><g transform="translate(1,1)"><rect x="1" y="1" width="22" height="23" rx="1.5"/><line x1="4" y1="6" x2="20" y2="6"/><rect x="4" y="9" width="16" height="12" rx="1"/></g><g transform="translate(30,1)"><rect x="1" y="1" width="22" height="23" rx="1.5"/><line x1="1" y1="7" x2="23" y2="7"/><circle cx="12" cy="15.5" r="5.5"/><circle cx="12" cy="15.5" r="2.2"/></g><g transform="translate(60,1)"><rect x="1" y="1" width="22" height="23" rx="1.5"/><line x1="1" y1="7" x2="23" y2="7"/><path d="M7 11c1.1 1.1 1.1 2.9 0 4M12 11c1.1 1.1 1.1 2.9 0 4M17 11c1.1 1.1 1.1 2.9 0 4"/></g><g transform="translate(90,1)"><rect x="1" y="1" width="22" height="23" rx="1.5"/><circle cx="7" cy="6" r="2"/><circle cx="16" cy="6" r="2"/><rect x="4" y="11" width="16" height="10" rx="1"/></g></svg>`;
 const brandLogo = `${applianceStrip}<span class="logo-word"><span class="brand-beola">BEOLA</span> <span class="brand-shpk">SHPK</span></span>`;
-const brandStrip = SITE.brand.appliances.map((b) => `<li>${b}</li>`).join("");
+
+/* badge label + class */
+const BADGE = {
+  new: { l: { sq: "E RE", en: "NEW", de: "NEU" }, c: "badge-new" },
+  miele: { l: "MIELE", c: "badge-brand" }, bosch: { l: "BOSCH", c: "badge-brand" },
+  siemens: { l: "SIEMENS", c: "badge-brand" }, aeg: { l: "AEG", c: "badge-brand" },
+  import: { l: { sq: "IMPORT", en: "IMPORT", de: "IMPORT" }, c: "badge-soft" },
+  checked: { l: { sq: "E KONTROLLUAR", en: "INSPECTED", de: "GEPRÜFT" }, c: "badge-soft" },
+  professional: { l: { sq: "PROFESIONALE", en: "PROFESSIONAL", de: "PROFI" }, c: "badge-soft" },
+  wholesale: { l: { sq: "SHUMICË", en: "WHOLESALE", de: "GROSSHANDEL" }, c: "badge-soft" },
+};
+const badge = (id, lang) => BADGE[id] ? `<span class="badge ${BADGE[id].c}">${esc(T(BADGE[id].l, lang))}</span>` : "";
 
 /* ---------- head ---------- */
 function head(lang, P, { title, desc, canonicalPath, slug, isBranch }) {
@@ -65,7 +77,7 @@ function head(lang, P, { title, desc, canonicalPath, slug, isBranch }) {
   <meta name="description" content="${esc(desc)}" />
   <meta name="author" content="${esc(SITE.brand.legal)}" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#1a1a1a" />
+  <meta name="theme-color" content="#171717" />
   <link rel="canonical" href="${absUrl(canonicalPath)}" />
   ${alts}
   <link rel="alternate" hreflang="x-default" href="${absUrl(pagePath(SITE.defaultLang, isBranch ? slug : ""))}" />
@@ -89,35 +101,53 @@ function head(lang, P, { title, desc, canonicalPath, slug, isBranch }) {
   <link rel="stylesheet" href="${P}css/styles.css" />`;
 }
 
-/* ---------- header / footer ---------- */
+/* ---------- header (retail) ---------- */
 function header(lang, P, t, { slug, isBranch }) {
   const homeBase = `${P}${lang}/`;
-  const nav = [
-    ["products", t.nav_products], ["branches", t.nav_branches], ["about", t.nav_about],
-    ["gallery", t.nav_gallery], ["faq", t.nav_faq], ["contact", t.nav_contact],
-  ].map(([id, label]) => `<a href="${homeBase}#${id}">${esc(label)}</a>`).join("\n        ");
   const langLinks = SITE.langs.map((l) => {
     const href = `${P}${l}/${isBranch ? slug + "/" : ""}`;
     const on = l === lang;
     return `<a href="${href}" lang="${l}" hreflang="${l}" class="lang-btn${on ? " is-active" : ""}"${on ? ' aria-current="true"' : ""} aria-label="${esc(SITE.langName[l])}">${SITE.langLabel[l]}</a>`;
   }).join("");
+  const cats = SITE.catnav.map((c) => `<a href="${homeBase}${c.href}" class="catnav-link">${esc(T(c.label, lang))}</a>`).join("");
+  const siteLinks = [["#branches", t.nav_branches], ["#about", t.nav_about], ["#gallery", t.nav_gallery], ["#faq", t.nav_faq], ["#contact", t.nav_contact]]
+    .map(([h, l]) => `<a href="${homeBase}${h}">${esc(l)}</a>`).join("");
+
   return `
   <a href="#main" class="skip-link">${esc(t.skip)}</a>
+  <div class="topbar"><div class="container topbar-inner">
+    <ul class="topbar-msgs">${t.topbar.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>
+    <span class="topbar-hours">${esc(T(SITE.hours.short, lang))}</span>
+  </div></div>
   <header class="site-header" id="top">
-    <div class="container header-inner">
+    <div class="container header-main">
       <a href="${homeBase}" class="logo" aria-label="BEOLA SHPK — B.O. BEOLA">${brandLogo}</a>
-      <nav class="main-nav" id="main-nav" aria-label="${esc(t.nav_products)}">
-        ${nav}
-      </nav>
+      <form class="site-search" role="search" action="${homeBase}" data-wa="${C.whatsapp}" data-greeting="${esc(t.wa_search)}">
+        <span class="search-ic" aria-hidden="true">${IC.search}</span>
+        <input type="search" name="q" placeholder="${esc(t.search_ph)}" aria-label="${esc(t.search_aria)}" autocomplete="off" />
+        <button type="submit">${esc(t.search_btn)}</button>
+      </form>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="${esc(t.lang_switch)}">${langLinks}</div>
         <a href="${telHref(C.phone1Dial)}" class="btn btn-primary header-call" aria-label="${esc(t.call_aria)} ${esc(C.phone1Display)}">${IC.call}<span>${esc(C.phone1Display)}</span></a>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-label="${esc(t.menu)}" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
       </div>
     </div>
+    <nav class="catnav" aria-label="${esc(t.nav_products)}">
+      <div class="container catnav-inner">
+        <div class="catnav-cats">${cats}</div>
+        <div class="catnav-links">${siteLinks}</div>
+      </div>
+    </nav>
+    <nav class="mobile-nav" id="main-nav" aria-label="${esc(t.nav_products)}">
+      ${SITE.catnav.map((c) => `<a href="${homeBase}${c.href}">${esc(T(c.label, lang))}</a>`).join("\n      ")}
+      <hr />
+      ${siteLinks}
+    </nav>
   </header>`;
 }
 
+/* ---------- footer ---------- */
 function footer(lang, P, t) {
   const homeBase = `${P}${lang}/`;
   const branchLinks = SITE.branches.map((b) => `<a href="${P}${lang}/${b.slug}/">${esc(b.area)}</a>`).join("\n        ");
@@ -128,11 +158,11 @@ function footer(lang, P, t) {
       <div class="footer-brand">
         <div class="footer-logo">${brandLogo}</div>
         <p>${esc(t.footer_tagline)}</p>
-        <ul class="brand-list footer-brands">${brandStrip}</ul>
+        <ul class="brand-list footer-brands">${SITE.brand.appliances.map((b) => `<li>${b}</li>`).join("")}</ul>
       </div>
       <div class="footer-links">
         <h4>${esc(t.footer_quick)}</h4>
-        <a href="${homeBase}#products">${esc(t.nav_products)}</a>
+        <a href="${homeBase}#categories">${esc(t.nav_products)}</a>
         <a href="${homeBase}#branches">${esc(t.nav_branches)}</a>
         <a href="${homeBase}#gallery">${esc(t.nav_gallery)}</a>
         <a href="${homeBase}#faq">${esc(t.nav_faq)}</a>
@@ -174,7 +204,7 @@ function branchLD(lang, b) {
     areaServed: "Tiranë, Albania", brand: SITE.brand.appliances, openingHoursSpecification: hoursSpec(),
   };
 }
-function homeLD(lang, t) {
+function homeLD(lang) {
   const org = {
     "@type": ["Organization", "HomeGoodsStore"], "@id": SITE.baseUrl + "/#org",
     name: SITE.brand.legal, url: absUrl(pagePath(lang, "")), image: `${SITE.baseUrl}/images/hero.jpg`,
@@ -189,97 +219,112 @@ function homeLD(lang, t) {
 
 /* ---------- sections ---------- */
 function heroSection(lang, P, t) {
+  const ticks = [t.trust_checked, t.trust_import, t.trust_retail, t.trust_service];
   return `
     <section class="hero" id="home">
-      ${pic(P, "hero", t.hero_h1, 1920, 1040, { eager: true, cls: "hero-media" })}
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <p class="hero-eyebrow">${esc(t.hero_eyebrow)}</p>
-        <h1>${esc(t.hero_h1)}</h1>
-        <p class="hero-sub">${esc(t.hero_sub)}</p>
-        <div class="hero-phone"><span class="hero-phone-label">${esc(t.hero_call_label)}</span><a href="${telHref(C.phone1Dial)}" class="hero-phone-number">${esc(C.phone1Display)}</a></div>
-        <div class="hero-buttons">
-          <a href="${telHref(C.phone1Dial)}" class="btn btn-primary">${IC.call}<span>${esc(t.btn_call)}</span></a>
-          <a href="${waHref(t.wa_greeting)}" class="btn btn-whatsapp" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.btn_wa)}</span></a>
-          <a href="#products" class="btn btn-outline">${IC.grid}<span>${esc(t.btn_products)}</span></a>
-          <a href="#branches" class="btn btn-outline">${IC.pin}<span>${esc(t.btn_branches)}</span></a>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">${esc(t.hero_eyebrow)}</p>
+          <h1>${esc(t.hero_h1)}</h1>
+          <p class="hero-sub">${esc(t.hero_sub)}</p>
+          <div class="hero-buttons">
+            <a href="#categories" class="btn btn-primary btn-lg">${esc(t.hero_cta1)}</a>
+            <a href="#branches" class="btn btn-line btn-lg">${IC.pin}<span>${esc(t.hero_cta2)}</span></a>
+          </div>
+          <ul class="hero-ticks">${ticks.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
         </div>
-        <div class="hero-brands"><span class="hero-brands-label">${esc(t.brands_label)}</span><ul class="brand-list">${brandStrip}</ul></div>
+        <div class="hero-figure">${pic(P, "hero", t.hero_h1, 1920, 1040, { eager: true })}</div>
       </div>
     </section>`;
 }
 function categoriesSection(lang, P, t) {
-  const cards = SITE.categories.map((c) => `
-        <article class="cat-card">
-          ${pic(P, c.image, c.title[lang], 640, 420, { cls: "cat-photo" })}
-          <div class="cat-body">
-            <h3>${esc(c.title[lang])}</h3>
-            <p>${esc(c.desc[lang])}</p>
-            <a class="cat-cta" href="${waHref(t.wa_availability + " " + c.title[lang])}" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.cat_cta)}</span></a>
-          </div>
-        </article>`).join("");
+  const tiles = SITE.categories.map((c) => `
+        <a class="cat-tile" href="${waHref(t.wa_generic + " " + T(c.title, lang))}" target="_blank" rel="noopener">
+          <div class="cat-tile-photo">${pic(P, c.image, T(c.title, lang), 640, 420)}</div>
+          <span class="cat-tile-name">${esc(T(c.title, lang))}</span>
+        </a>`).join("");
   return `
-    <section class="section" id="products">
+    <section class="section" id="categories">
       <div class="container">
-        <div class="section-head">
-          <span class="kicker">${esc(t.cat_kicker)}</span>
-          <h2>${esc(t.cat_title)}</h2>
-          <p class="section-sub">${esc(t.cat_sub)}</p>
-        </div>
-        <div class="cat-grid">${cards}
+        <div class="section-head"><span class="kicker">${esc(t.cat_kicker)}</span><h2>${esc(t.cat_title)}</h2></div>
+        <div class="cat-tiles">${tiles}
         </div>
       </div>
     </section>`;
 }
-function featuredSection(lang, P, t) {
-  const cards = SITE.featured.map((f) => `
-        <article class="focus-card">
-          ${pic(P, f.image, f.title[lang], 1000, 750, { cls: "focus-photo" })}
-          <div class="focus-body">
-            <h3>${esc(f.title[lang])}</h3>
-            <p>${esc(f.note[lang])}</p>
-            <a class="focus-cta" href="${waHref(t.wa_availability + " " + f.title[lang])}" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.feat_cta)}</span></a>
-          </div>
-        </article>`).join("");
+function productCard(lang, P, p, t) {
+  const name = T(p.name, lang);
+  const badges = (p.badges || []).map((b) => badge(b, lang)).join("");
+  const catName = (SITE.categories.find((c) => c.id === p.cat) || {}).title;
+  const q = name + (p.brand ? ` (${p.brand})` : "");
   return `
-    <section class="section section-alt" id="featured">
+        <article class="pcard">
+          <div class="pcard-photo">${pic(P, p.image, name, 640, 480)}${badges ? `<div class="pcard-badges">${badges}</div>` : ""}</div>
+          <div class="pcard-body">
+            ${p.brand ? `<span class="pcard-brand">${esc(p.brand)}</span>` : `<span class="pcard-brand">${esc(catName ? T(catName, lang) : "")}</span>`}
+            <h3 class="pcard-name">${esc(name)}</h3>
+            <p class="pcard-avail">${esc(t.pd_avail)}</p>
+            <a class="btn btn-primary btn-sm pcard-cta" href="${waHref(t.wa_price + " " + q)}" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.pd_ask_price)}</span></a>
+          </div>
+        </article>`;
+}
+function arrivalsSection(lang, P, t) {
+  return `
+    <section class="section section-alt" id="arrivals">
       <div class="container">
-        <div class="section-head">
-          <span class="kicker">${esc(t.feat_kicker)}</span>
-          <h2>${esc(t.feat_title)}</h2>
-          <p class="section-sub">${esc(t.feat_sub)}</p>
-        </div>
-        <div class="focus-grid">${cards}
+        <div class="section-head"><span class="kicker">${esc(t.arrivals_kicker)}</span><h2>${esc(t.arrivals_title)}</h2><p class="section-sub">${esc(t.arrivals_sub)}</p></div>
+        <div class="pgrid">${SITE.products.map((p) => productCard(lang, P, p, t)).join("")}
         </div>
       </div>
     </section>`;
 }
-function whyusSection(lang, t) {
-  const items = SITE.whyus.map((w) => `
-        <li class="why-item"><span class="why-ic">${WHY_IC[w.icon] || IC.check}</span><div><h3>${esc(w.title[lang])}</h3><p>${esc(w.desc[lang])}</p></div></li>`).join("");
+function brandSection(lang, t) {
+  const items = SITE.brands.map((b) => `<a class="brand-tile" href="${waHref(t.wa_generic + " " + b.name)}" target="_blank" rel="noopener"><span class="brand-name">${esc(b.name)}</span><span class="brand-note">${esc(T(b.note, lang))}</span></a>`).join("");
   return `
-    <section class="section" id="why">
+    <section class="section brand-section" id="brands">
       <div class="container">
-        <div class="section-head"><span class="kicker">${esc(t.why_kicker)}</span><h2>${esc(t.why_title)}</h2></div>
-        <ul class="why-grid">${items}
-        </ul>
+        <div class="section-head"><span class="kicker">${esc(t.brand_kicker)}</span><h2>${esc(t.brand_title)}</h2></div>
+        <div class="brand-grid">${items}</div>
+      </div>
+    </section>`;
+}
+function whySection(lang, t) {
+  const items = SITE.whyus.map((w) => `<li class="why-chip"><span class="why-ic">${WHY_IC[w.icon] || IC.check}</span><span>${esc(T(w.title, lang))}</span></li>`).join("");
+  return `
+    <section class="section section-alt" id="why">
+      <div class="container">
+        <div class="section-head"><h2>${esc(t.why_title)}</h2></div>
+        <ul class="why-strip">${items}</ul>
+      </div>
+    </section>`;
+}
+function bandSection(id, kicker, data, waKey, ctaKey, lang, P, t, flip) {
+  return `
+    <section class="section" id="${id}">
+      <div class="container band${flip ? " band-flip" : ""}">
+        <div class="band-media">${pic(P, data.image, T(data.title, lang), 1000, 750)}</div>
+        <div class="band-copy">
+          <span class="kicker">${esc(kicker)}</span>
+          <h2>${esc(T(data.title, lang))}</h2>
+          <p>${esc(T(data.text, lang))}</p>
+          <a class="btn btn-primary" href="${waHref(t[waKey] + " ")}" target="_blank" rel="noopener">${IC.wa}<span>${esc(T(data.cta, lang))}</span></a>
+        </div>
       </div>
     </section>`;
 }
 function branchesSection(lang, P, t) {
   const cards = SITE.branches.map((b) => `
         <article class="branch-card${b.isMain ? " is-main" : ""}">
-          <div class="branch-map"><iframe src="${mapEmbed(b.address)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="${esc(b.area)} — ${esc(SITE.brand.short)}"></iframe></div>
           <div class="branch-body">
             ${b.isMain ? `<span class="branch-badge">${esc(t.badge_main)}</span>` : ""}
             <h3>${esc(SITE.brand.short)} — ${esc(b.area)}</h3>
-            <p class="branch-area">${esc(b.landmark[lang])}</p>
+            <p class="branch-area"><span aria-hidden="true">${IC.pin}</span>${esc(b.landmark[lang])}</p>
             <p class="branch-addr">${esc(b.address)}</p>
             <p class="branch-hrs">${SITE.hours.lines[lang].map(esc).join(" · ")}</p>
             <div class="branch-actions">
               <a class="btn btn-primary btn-sm" href="${telHref(C.phone1Dial)}">${IC.call}<span>${esc(t.btn_call)}</span></a>
               <a class="btn btn-dark btn-sm" href="${mapDir(b.address)}" target="_blank" rel="noopener">${IC.pin}<span>${esc(t.btn_directions)}</span></a>
-              <a class="btn btn-ghost btn-sm" href="${P}${lang}/${b.slug}/">${esc(t.branch_view)} →</a>
+              <a class="btn btn-line btn-sm" href="${P}${lang}/${b.slug}/">${esc(t.branch_view)} →</a>
             </div>
           </div>
         </article>`).join("");
@@ -292,34 +337,30 @@ function branchesSection(lang, P, t) {
       </div>
     </section>`;
 }
-function gallerySection(lang, P, t) {
-  const figs = SITE.gallery.map((g) => `<figure>${pic(P, g.image, g.alt[lang], 1000, 750)}</figure>`).join("\n          ");
+function aboutSection(lang, P, t) {
+  const stats = SITE.about.stats.map((s) => `<div class="stat"><span class="stat-num">${esc(T(s.num, lang))}</span><span class="stat-label">${esc(T(s.label, lang))}</span></div>`).join("");
   return `
-    <section class="section" id="gallery">
+    <section class="section" id="about">
+      <div class="container band">
+        <div class="band-media">${pic(P, SITE.about.image, t.ab_title, 1000, 750)}</div>
+        <div class="band-copy">
+          <span class="kicker">${esc(t.ab_kicker)}</span>
+          <h2>${esc(t.ab_title)}</h2>
+          <p>${esc(t.about_p1)}</p>
+          <div class="stats">${stats}</div>
+        </div>
+      </div>
+    </section>`;
+}
+function gallerySection(lang, P, t) {
+  const figs = SITE.gallery.map((g, i) => `<button type="button" class="gcell" data-full="${P}images/${g.image}.jpg" aria-label="${esc(t.gal_zoom)}">${pic(P, g.image, T(g.alt, lang), 1000, 750, { cls: "" })}</button>`).join("\n          ");
+  return `
+    <section class="section section-alt" id="gallery">
       <div class="container">
         <div class="section-head"><span class="kicker">${esc(t.gal_kicker)}</span><h2>${esc(t.gal_title)}</h2></div>
         <div class="gallery-grid">
           ${figs}
         </div>
-      </div>
-    </section>`;
-}
-function aboutSection(lang, P, t) {
-  const feats = [[t.feat_family_t, t.feat_family_d], [t.feat_years_t, t.feat_years_d], [t.feat_import_t, t.feat_import_d], [t.feat_tech_t, t.feat_tech_d]];
-  return `
-    <section class="section section-alt" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <span class="kicker">${esc(t.ab_kicker)}</span>
-            <h2>${esc(t.ab_title)}</h2>
-            <p>${esc(t.about_p1)}</p>
-          </div>
-          ${pic(P, "about-workshop", t.feat_tech_t, 1200, 900, { cls: "about-media" })}
-        </div>
-        <ul class="feature-list">
-          ${feats.map(([tt, dd]) => `<li><h3>${esc(tt)}</h3><p>${esc(dd)}</p></li>`).join("\n          ")}
-        </ul>
       </div>
     </section>`;
 }
@@ -349,7 +390,6 @@ function contactSection(lang, t) {
             <li><span class="contact-label">${esc(t.label_email)}</span><a href="${mailHref()}">${esc(C.email)}</a></li>
             <li><span class="contact-label">${esc(t.label_instagram)}</span><a href="${C.instagram}" target="_blank" rel="noopener">${esc(igLabel)}</a></li>
           </ul>
-          <a href="${waHref(t.wa_greeting)}" class="btn btn-whatsapp" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.btn_wa)}</span></a>
           <div class="contact-addr">
             <h3>${esc(t.co_address_label)}</h3>
             <ul>${addrLines}</ul>
@@ -357,7 +397,7 @@ function contactSection(lang, t) {
           </div>
         </div>
         <form class="contact-form" id="contact-form" novalidate
-              data-wa="${C.whatsapp}" data-greeting="${esc(t.wa_greeting)}"
+              data-wa="${C.whatsapp}" data-greeting="${esc(t.wa_generic)}"
               data-l-name="${esc(t.form_name)}" data-l-phone="${esc(t.form_phone)}" data-l-need="${esc(t.form_need)}"
               data-err-name="${esc(t.form_err_name)}" data-err-phone="${esc(t.form_err_phone)}" data-ok="${esc(t.form_ok)}">
           <h3>${esc(t.form_title)}</h3>
@@ -375,24 +415,35 @@ function contactSection(lang, t) {
       </div>
     </section>`;
 }
+function lightbox() {
+  return `
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="×">×</button>
+    <img alt="" />
+  </div>`;
+}
 
 /* ---------- pages ---------- */
 function homePage(lang) {
   const t = SITE.i18n[lang], P = prefix(1), seo = SITE.seo.home[lang], path = pagePath(lang, "");
   const h = head(lang, P, { title: seo.title, desc: seo.desc, canonicalPath: path, isBranch: false });
-  const jsonld = `\n  <script type="application/ld+json">\n${JSON.stringify(homeLD(lang, t), null, 2)}\n  </script>\n</head>\n<body>`;
+  const jsonld = `\n  <script type="application/ld+json">\n${JSON.stringify(homeLD(lang), null, 2)}\n  </script>\n</head>\n<body>`;
   const main = `
   <main id="main">
     ${heroSection(lang, P, t)}
     ${categoriesSection(lang, P, t)}
-    ${featuredSection(lang, P, t)}
-    ${whyusSection(lang, t)}
+    ${arrivalsSection(lang, P, t)}
+    ${brandSection(lang, t)}
+    ${whySection(lang, t)}
+    ${bandSection("professional", t.prof_kicker, SITE.professional, "wa_prof", "cta", lang, P, t, false)}
+    ${bandSection("service", t.service_kicker, SITE.service, "wa_service", "cta", lang, P, t, true)}
     ${branchesSection(lang, P, t)}
-    ${gallerySection(lang, P, t)}
     ${aboutSection(lang, P, t)}
+    ${gallerySection(lang, P, t)}
     ${faqSection(lang, t)}
     ${contactSection(lang, t)}
-  </main>`;
+  </main>
+  ${lightbox()}`;
   return h + jsonld + header(lang, P, t, { isBranch: false }) + main + footer(lang, P, t);
 }
 
@@ -416,7 +467,7 @@ function branchPage(lang, b) {
         <p class="branch-hero-sub">${esc(t.branch_hero_sub)} ${esc(b.area)} — ${esc(b.landmark[lang])}.</p>
         <div class="hero-buttons">
           <a href="${telHref(C.phone1Dial)}" class="btn btn-primary">${IC.call}<span>${esc(t.btn_call)}</span></a>
-          <a href="${waHref(t.wa_greeting + " (" + b.area + ")")}" class="btn btn-whatsapp" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.btn_wa)}</span></a>
+          <a href="${waHref(t.wa_generic + " (" + b.area + ")")}" class="btn btn-whatsapp" target="_blank" rel="noopener">${IC.wa}<span>${esc(t.btn_wa)}</span></a>
           <a href="${mapDir(b.address)}" class="btn btn-dark" target="_blank" rel="noopener">${IC.pin}<span>${esc(t.btn_directions)}</span></a>
         </div>
       </div>
@@ -464,7 +515,7 @@ function rootPage() {
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta http-equiv="refresh" content="0; url=./${dl}/" />
   <script>(function(){try{var s=["${SITE.langs.join('","')}"];var p=(navigator.language||"sq").slice(0,2).toLowerCase();location.replace("./"+(s.indexOf(p)>-1?p:"${dl}")+"/");}catch(e){location.replace("./${dl}/");}})();</script>
-  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#141414;color:#fff;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}a{color:#fff;display:inline-block;margin:.4rem .6rem;padding:.7rem 1.4rem;border:1px solid rgba(255,255,255,.4);border-radius:8px;text-decoration:none;font-weight:700}</style>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#171717;color:#fff;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}a{color:#fff;display:inline-block;margin:.4rem .6rem;padding:.7rem 1.4rem;border:1px solid rgba(255,255,255,.4);border-radius:8px;text-decoration:none;font-weight:700}</style>
 </head>
 <body><div><p>B.O. BEOLA SHPK — Elektroshtëpiake Gjermane në Tiranë</p><nav aria-label="Language">
     ${links}
