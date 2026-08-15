@@ -1,20 +1,19 @@
 /* =============================================================================
    B.O. BEOLA SHPK — runtime enhancements (small, optional)
-   Everything is readable and all contact details/links are truthful WITHOUT JS.
-   This adds: sticky-header shadow, mobile menu, search → WhatsApp enquiry,
-   contact form → WhatsApp, and the gallery lightbox. No content/data lives here.
+   Loaded on every page. Adds: header shadow, mobile menu, favorites (localStorage),
+   contact form → WhatsApp, product gallery, share, and the image lightbox.
+   The header search submits natively to /products/?search=… (works without JS).
 ============================================================================= */
 (function () {
   "use strict";
   var qs = function (s, c) { return (c || document).querySelector(s); };
   var qsa = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ---- Sticky header shadow on scroll ---- */
+  /* ---- Sticky header shadow ---- */
   var header = document.getElementById("top");
   if (header) {
     var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 8); };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   /* ---- Mobile navigation ---- */
@@ -26,28 +25,39 @@
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
     qsa("a", nav).forEach(function (a) {
-      a.addEventListener("click", function () {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", function () { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); });
     });
   }
 
-  /* ---- Header search → pre-filled WhatsApp enquiry (no fake results) ---- */
-  var search = qs(".site-search");
-  if (search) {
-    search.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var input = qs("input", search);
-      var q = (input && input.value || "").trim();
-      if (!q) { if (input) input.focus(); return; }
-      var text = (search.dataset.greeting || "") + " " + q;
-      var w = window.open("https://wa.me/" + search.dataset.wa + "?text=" + encodeURIComponent(text), "_blank");
-      if (w) w.opener = null;
+  /* ---- Favorites (Save) — localStorage, delegated ---- */
+  var SKEY = "beola_saved";
+  function getSaved() { try { return JSON.parse(localStorage.getItem(SKEY) || "[]"); } catch (e) { return []; } }
+  function setSaved(a) { try { localStorage.setItem(SKEY, JSON.stringify(a)); } catch (e) {} }
+  function syncSaved() {
+    var s = getSaved();
+    qsa(".save-btn").forEach(function (b) {
+      var on = s.indexOf(b.getAttribute("data-save")) > -1;
+      b.classList.toggle("is-saved", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    qsa("[data-saved-count]").forEach(function (c) {
+      if (s.length) { c.hidden = false; c.textContent = s.length; } else { c.hidden = true; }
     });
   }
+  window.beolaGetSaved = getSaved;
+  window.beolaSyncSaved = syncSaved;
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".save-btn") : null;
+    if (!btn) return;
+    e.preventDefault();
+    var id = btn.getAttribute("data-save"), s = getSaved(), i = s.indexOf(id);
+    if (i > -1) s.splice(i, 1); else s.push(id);
+    setSaved(s); syncSaved();
+    if (window.beolaRenderSaved) window.beolaRenderSaved();
+  });
+  syncSaved();
 
-  /* ---- Contact form → WhatsApp / validation / status ---- */
+  /* ---- Contact form → WhatsApp ---- */
   var form = document.getElementById("contact-form");
   if (form) {
     var status = document.getElementById("form-status");
@@ -88,29 +98,52 @@
     });
   }
 
-  /* ---- Gallery lightbox ---- */
-  var lb = document.getElementById("lightbox");
-  if (lb) {
-    var lbImg = qs("img", lb);
-    var close = qs(".lightbox-close", lb);
-    var open = function (src, alt) {
-      lbImg.src = src; lbImg.alt = alt || "";
-      lb.hidden = false; lb.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      close.focus();
-    };
-    var hide = function () {
-      lb.hidden = true; lb.setAttribute("aria-hidden", "true");
-      lbImg.src = ""; document.body.style.overflow = "";
-    };
-    qsa(".gcell").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var img = qs("img", btn);
-        open(btn.getAttribute("data-full"), img ? img.alt : "");
+  /* ---- Product gallery (thumbnail swap) ---- */
+  var pdMain = qs(".pd-main");
+  if (pdMain) {
+    var pdImg = qs("img", pdMain);
+    var pdSource = qs("source", pdMain);
+    qsa(".pd-thumb").forEach(function (th) {
+      th.addEventListener("click", function () {
+        var jpg = th.getAttribute("data-img");
+        var webp = jpg.replace(/\.jpg$/, ".webp");
+        if (pdSource) pdSource.srcset = webp;
+        if (pdImg) pdImg.src = jpg;
+        pdMain.setAttribute("data-full", jpg);
+        qsa(".pd-thumb").forEach(function (x) { x.classList.remove("is-active"); });
+        th.classList.add("is-active");
       });
     });
-    close.addEventListener("click", hide);
-    lb.addEventListener("click", function (e) { if (e.target === lb) hide(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) hide(); });
+  }
+
+  /* ---- Share ---- */
+  function toast(msg) {
+    var el = document.createElement("div");
+    el.className = "beola-toast"; el.textContent = msg;
+    document.body.appendChild(el);
+    setTimeout(function () { el.classList.add("show"); }, 10);
+    setTimeout(function () { el.classList.remove("show"); setTimeout(function () { el.remove(); }, 300); }, 1800);
+  }
+  qsa(".share-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var data = { title: b.getAttribute("data-share-title") || document.title, url: location.href };
+      if (navigator.share) { navigator.share(data).catch(function () {}); }
+      else if (navigator.clipboard) { navigator.clipboard.writeText(location.href).then(function () { toast(b.getAttribute("data-copied") || "Link copied"); }).catch(function () {}); }
+    });
+  });
+
+  /* ---- Lightbox (any [data-full]) ---- */
+  var lb = document.getElementById("lightbox");
+  if (lb) {
+    var lbImg = qs("img", lb), close = qs(".lightbox-close", lb);
+    var openLb = function (src) { lbImg.src = src; lb.hidden = false; lb.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; close.focus(); };
+    var hideLb = function () { lb.hidden = true; lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; document.body.style.overflow = ""; };
+    document.addEventListener("click", function (e) {
+      var el = e.target.closest ? e.target.closest("[data-full]") : null;
+      if (el) { e.preventDefault(); openLb(el.getAttribute("data-full")); }
+    });
+    close.addEventListener("click", hideLb);
+    lb.addEventListener("click", function (e) { if (e.target === lb) hideLb(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) hideLb(); });
   }
 })();

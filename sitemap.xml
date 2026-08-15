@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/en/</loc>
@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/de/</loc>
@@ -22,7 +22,439 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/saved/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/saved/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/saved/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/saved/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/saved/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/saved/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/saved/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/saved/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/saved/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/saved/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/washing-machines/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/washing-machines/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/washing-machines/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/washing-machines/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/dryers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/dryers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dryers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dryers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/ovens-cookers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/ovens-cookers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/ovens-cookers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/ovens-cookers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/dishwashers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/dishwashers/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/dishwashers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/dishwashers/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/fridges/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/fridges/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/fridges/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/fridges/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/products/professional-equipment/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/products/professional-equipment/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/products/professional-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/products/professional-equipment/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine-premium/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine-premium/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/miele-washing-machine-premium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/miele-washing-machine-premium/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/bosch-stainless-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/bosch-stainless-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/bosch-stainless-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/bosch-stainless-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/built-in-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/built-in-oven/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/built-in-oven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/built-in-oven/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/ceramic-hob-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/ceramic-hob-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/ceramic-hob-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/ceramic-hob-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/siemens-dishwasher/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/siemens-dishwasher/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/siemens-dishwasher/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/siemens-dishwasher/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/aeg-dryer/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/aeg-dryer/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/aeg-dryer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/aeg-dryer/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/german-fridge/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/german-fridge/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/german-fridge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/german-fridge/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/professional-range-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/professional-range-cooker/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-range-cooker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-range-cooker/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/en/product/professional-ovens/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://beolaosmani-collab.github.io/beola-website/de/product/professional-ovens/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/product/professional-ovens/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/product/professional-ovens/"/>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/sq/yzberisht/</loc>
@@ -30,7 +462,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/yzberisht/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/en/yzberisht/</loc>
@@ -38,7 +470,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/yzberisht/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/de/yzberisht/</loc>
@@ -46,7 +478,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/yzberisht/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/yzberisht/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/sq/mezez/</loc>
@@ -54,7 +486,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/mezez/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/mezez/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/mezez/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/en/mezez/</loc>
@@ -62,7 +494,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/mezez/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/mezez/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/mezez/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/de/mezez/</loc>
@@ -70,7 +502,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/mezez/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/mezez/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/mezez/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/sq/vaqarr/</loc>
@@ -78,7 +510,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/vaqarr/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/en/vaqarr/</loc>
@@ -86,7 +518,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/vaqarr/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://beolaosmani-collab.github.io/beola-website/de/vaqarr/</loc>
@@ -94,6 +526,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://beolaosmani-collab.github.io/beola-website/en/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://beolaosmani-collab.github.io/beola-website/de/vaqarr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beolaosmani-collab.github.io/beola-website/sq/vaqarr/"/>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
