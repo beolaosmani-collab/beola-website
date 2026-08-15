@@ -108,25 +108,28 @@ ul { margin: 0; }
 .cat-card { background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s; }
 .cat-card:hover { border-color: var(--charcoal); box-shadow: var(--shadow-hover); }
 .cat-photo { aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-alt); }
-.cat-photo img { height: 100%; object-fit: cover; }
+.cat-photo img { height: 100%; object-fit: cover; transition: transform .4s ease; }
+.cat-card:hover .cat-photo img { transform: scale(1.04); }
 .cat-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
 .cat-body h3 { font-size: 1.15rem; margin-bottom: .3rem; }
 .cat-body p { font-size: .92rem; margin: 0 0 14px; flex: 1; }
-.cat-cta { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; align-self: flex-start;
-  background: var(--wa); color: #06371c; font-weight: 700; font-size: .9rem; padding: .5rem .9rem; border-radius: 8px; transition: background .15s, color .15s; }
+.cat-cta { display: flex; align-items: center; justify-content: center; gap: .45rem; width: 100%;
+  background: var(--wa); color: #06371c; font-weight: 700; font-size: .9rem; padding: .62rem 1rem; border-radius: 8px; transition: background .15s, color .15s; }
 .cat-cta:hover { background: var(--wa-dark); color: #fff; }
 
 /* ----------------------------- Products in focus ----------------------------- */
 .focus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.focus-card { background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.focus-card { background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s; }
+.focus-card:hover { border-color: var(--charcoal); box-shadow: var(--shadow-hover); }
 .focus-photo { aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-alt); }
-.focus-photo img { height: 100%; object-fit: cover; }
+.focus-photo img { height: 100%; object-fit: cover; transition: transform .4s ease; }
+.focus-card:hover .focus-photo img { transform: scale(1.04); }
 .focus-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
 .focus-body h3 { font-size: 1.02rem; margin-bottom: .25rem; }
 .focus-body p { font-size: .88rem; margin: 0 0 12px; flex: 1; }
-.focus-cta { display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start; color: var(--wa-dark); font-weight: 700; font-size: .88rem; }
-.focus-cta svg { width: 17px; height: 17px; }
-.focus-cta:hover { color: var(--charcoal); }
+.focus-cta { display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start; background: var(--wa); color: #06371c; font-weight: 700; font-size: .84rem; padding: .42rem .75rem; border-radius: 7px; transition: background .15s, color .15s; }
+.focus-cta svg { width: 16px; height: 16px; }
+.focus-cta:hover { background: var(--wa-dark); color: #fff; }
 
 /* ----------------------------- Why choose us ----------------------------- */
 .why-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
