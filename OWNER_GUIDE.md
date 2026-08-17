@@ -102,6 +102,37 @@ real, then rebuild.
 
 ---
 
+## Products — the appliance catalogue
+
+Each appliance is **one small file** in `content/products/` (e.g.
+`miele-washing-machine.json`). Adding one file makes it appear automatically in
+the catalogue, its category, brand/search filters, its own product page, related
+products, new arrivals, and the WhatsApp enquiry — no page editing.
+
+### Easiest way — the no-code admin (Pages CMS)
+One-time setup (≈3 minutes, no coding):
+1. Go to **https://pagescms.org** and click **Sign in with GitHub**.
+2. Authorise it and **install the Pages CMS app on the `beola-website` repository**
+   (you can limit it to just this one repo).
+3. Open the repo inside Pages CMS → you'll see a **Products** collection.
+
+Then, to add an appliance:
+- Click **Add** in Products, fill the form — **name** (Albanian/English/German),
+  **brand**, **category**, upload **photos**, set **availability**, tick badges
+  like **New arrival** — and **Save**.
+- Saving commits to GitHub and the site **rebuilds itself in ~1 minute**.
+- To hide something without deleting it, untick **Show on the website**.
+
+### Or edit on GitHub directly
+Open `content/products/`, copy an existing `.json` file, rename it, and change the
+values. Commit — the site rebuilds.
+
+> 🔴 Only fill what's true. Leave `model`, price, etc. empty if you don't have
+> them — the site simply won't show those. It shows **"Ask for price"** unless you
+> add a real price. Never invent specs, prices or stock.
+
+Categories & availability wording live in `data/products.mjs` (rarely changed).
+
 ## Publishing / deployment
 The site is hosted on **GitHub Pages** from the `main` branch.
 - Edit `data/site.mjs` on GitHub → **Commit** → the **build** GitHub Action

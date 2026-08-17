@@ -1,0 +1,24 @@
+{
+  "id": "p-010",
+  "slug": "professional-ovens",
+  "title": {
+    "sq": "Furra profesionale",
+    "en": "Professional ovens",
+    "de": "Profi-Backöfen"
+  },
+  "brand": "",
+  "model": "",
+  "category": "ovens",
+  "images": [
+    "images/gallery-2.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": false,
+  "professional": true,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-02"
+}

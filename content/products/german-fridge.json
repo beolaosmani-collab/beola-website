@@ -1,0 +1,24 @@
+{
+  "id": "p-008",
+  "slug": "german-fridge",
+  "title": {
+    "sq": "Frigorifer gjerman",
+    "en": "German fridge",
+    "de": "Deutscher Kühlschrank"
+  },
+  "brand": "",
+  "model": "",
+  "category": "fridges",
+  "images": [
+    "images/prod-fridges.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": true,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-04"
+}

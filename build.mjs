@@ -11,14 +11,23 @@
 ============================================================================= */
 
 import { SITE } from "./data/site.mjs";
-import { CATEGORIES, AVAIL, PRODUCTS } from "./data/products.mjs";
-import { writeFileSync, mkdirSync } from "fs";
+import { CATEGORIES, AVAIL } from "./data/products.mjs";
+import { writeFileSync, mkdirSync, readdirSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const C = SITE.contact;
 const YEAR = 2026;
+
+/* Products = one JSON file each in content/products/ (edited via Pages CMS). */
+const imgBase = (s) => String(s || "").replace(/^.*\//, "").replace(/\.(jpe?g|png|webp)$/i, "");
+const PRODUCTS = readdirSync(join(ROOT, "content", "products"))
+  .filter((f) => f.endsWith(".json"))
+  .map((f) => { try { return JSON.parse(readFileSync(join(ROOT, "content", "products", f), "utf8")); } catch (e) { console.error("⚠ bad product JSON:", f, e.message); return null; } })
+  .filter(Boolean)
+  .map((p) => ({ ...p, images: (Array.isArray(p.images) && p.images.length ? p.images : ["hero"]).map(imgBase).filter(Boolean) }))
+  .sort((a, b) => String(b.createdAt || "").localeCompare(String(a.createdAt || "")));
 
 /* ---------- helpers ---------- */
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

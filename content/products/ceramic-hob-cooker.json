@@ -1,0 +1,24 @@
+{
+  "id": "p-005",
+  "slug": "ceramic-hob-cooker",
+  "title": {
+    "sq": "Kuzhinë me pianurë qeramike",
+    "en": "Cooker with ceramic hob",
+    "de": "Herd mit Ceranfeld"
+  },
+  "brand": "",
+  "model": "",
+  "category": "ovens",
+  "images": [
+    "images/gallery-1.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": true,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-06"
+}

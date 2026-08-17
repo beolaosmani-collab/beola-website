@@ -1,0 +1,24 @@
+{
+  "id": "p-006",
+  "slug": "siemens-dishwasher",
+  "title": {
+    "sq": "Lavastovilje Siemens",
+    "en": "Siemens dishwasher",
+    "de": "Siemens Geschirrspüler"
+  },
+  "brand": "Siemens",
+  "model": "",
+  "category": "dishwashers",
+  "images": [
+    "images/prod-dishwashers.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": true,
+  "newArrival": false,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-05"
+}

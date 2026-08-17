@@ -1,0 +1,24 @@
+{
+  "id": "p-009",
+  "slug": "professional-range-cooker",
+  "title": {
+    "sq": "Kuzhinë profesionale",
+    "en": "Professional range cooker",
+    "de": "Profi-Standherd"
+  },
+  "brand": "",
+  "model": "",
+  "category": "ovens",
+  "images": [
+    "images/gallery-5.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": false,
+  "professional": true,
+  "wholesale": true,
+  "active": true,
+  "createdAt": "2026-07-03"
+}

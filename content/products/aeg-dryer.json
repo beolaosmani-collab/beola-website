@@ -1,0 +1,24 @@
+{
+  "id": "p-007",
+  "slug": "aeg-dryer",
+  "title": {
+    "sq": "Tharëse AEG",
+    "en": "AEG dryer",
+    "de": "AEG Trockner"
+  },
+  "brand": "AEG",
+  "model": "",
+  "category": "dryers",
+  "images": [
+    "images/prod-dryers.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": false,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-05"
+}

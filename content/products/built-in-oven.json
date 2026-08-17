@@ -1,0 +1,24 @@
+{
+  "id": "p-004",
+  "slug": "built-in-oven",
+  "title": {
+    "sq": "Furrë e integruar",
+    "en": "Built-in oven",
+    "de": "Einbau-Backofen"
+  },
+  "brand": "",
+  "model": "",
+  "category": "ovens",
+  "images": [
+    "images/gallery-2.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": false,
+  "newArrival": false,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-06"
+}

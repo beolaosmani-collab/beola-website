@@ -1,0 +1,24 @@
+{
+  "id": "p-001",
+  "slug": "miele-washing-machine",
+  "title": {
+    "sq": "Lavatriçe Miele",
+    "en": "Miele washing machine",
+    "de": "Miele Waschmaschine"
+  },
+  "brand": "Miele",
+  "model": "",
+  "category": "washers",
+  "images": [
+    "images/prod-washers.jpg"
+  ],
+  "availability": "ask",
+  "branch": "",
+  "priceOnRequest": true,
+  "featured": true,
+  "newArrival": true,
+  "professional": false,
+  "wholesale": false,
+  "active": true,
+  "createdAt": "2026-07-08"
+}

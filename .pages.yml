@@ -1,0 +1,105 @@
+# =============================================================================
+# Pages CMS configuration — https://pagescms.org
+# Lets the owner add/edit appliances through a form, no code.
+# Connect at app.pagescms.org (install the Pages CMS GitHub App on this repo),
+# then edit "Products". Saving commits to GitHub and the site auto-rebuilds.
+# =============================================================================
+
+media:
+  input: images          # photos are stored in /images
+  output: /images
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    filename: "{fields.slug}.json"
+    view:
+      fields: [title.en, brand, category, availability, active]
+      primary: title.en
+    fields:
+      - name: slug
+        label: Slug (web address, e.g. miele-washing-machine)
+        type: string
+        pattern: "^[a-z0-9-]+$"
+        required: true
+      - name: id
+        label: ID (any unique code, e.g. p-011)
+        type: string
+        required: true
+      - name: title
+        label: Product name
+        type: object
+        fields:
+          - { name: sq, label: "Albanian (Shqip)", type: string, required: true }
+          - { name: en, label: "English", type: string, required: true }
+          - { name: de, label: "German (Deutsch)", type: string, required: true }
+      - name: brand
+        label: Brand (leave empty if unbranded)
+        type: string
+      - name: model
+        label: Model (optional — leave empty if unknown)
+        type: string
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - { value: washers, label: "Washing Machines" }
+            - { value: dryers, label: "Dryers" }
+            - { value: ovens, label: "Ovens & Cookers" }
+            - { value: dishwashers, label: "Dishwashers" }
+            - { value: fridges, label: "Fridges" }
+      - name: images
+        label: Photos (first one is the main image)
+        type: image
+        list: true
+      - name: availability
+        label: Availability
+        type: select
+        default: ask
+        options:
+          values:
+            - { value: ask, label: "Ask about availability" }
+            - { value: available, label: "Available" }
+            - { value: reserved, label: "Reserved" }
+            - { value: sold, label: "Sold" }
+      - name: branch
+        label: Branch (optional)
+        type: select
+        options:
+          values:
+            - { value: "", label: "— none —" }
+            - { value: yzberisht, label: "Yzberisht" }
+            - { value: mezez, label: "Mëzez" }
+            - { value: vaqarr, label: "Vaqarr" }
+      - name: priceOnRequest
+        label: Price on request (shows "Ask for price")
+        type: boolean
+        default: true
+      - name: newArrival
+        label: New arrival (shows on homepage + NEW badge)
+        type: boolean
+        default: false
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+      - name: professional
+        label: Professional / commercial equipment
+        type: boolean
+        default: false
+      - name: wholesale
+        label: Available wholesale
+        type: boolean
+        default: false
+      - name: active
+        label: Show on the website
+        type: boolean
+        default: true
+      - name: createdAt
+        label: Date added (used for "Newest" sorting)
+        type: date
